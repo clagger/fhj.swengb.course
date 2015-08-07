@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>pom</artifactId>
+        <groupId>net.ladstatt.fhj</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>fhj.module01</artifactId>
+
+    <inceptionYear>2015</inceptionYear>
+    <description>Example app for android</description>
+    <packaging>apk</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>android</groupId>
+            <artifactId>android</artifactId>
+            <version>5.0.1_r2</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.simpligility.maven.plugins</groupId>
+                    <artifactId>android-maven-plugin</artifactId>
+                    <version>4.2.1</version>
+                    <extensions>true</extensions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.simpligility.maven.plugins</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sf.proguard</groupId>
+                        <artifactId>proguard-base</artifactId>
+                        <version>5.2</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <release>true</release>
+                    <run>
+                        <debug>false</debug>
+                    </run>
+                    <proguard>
+                        <skip>false</skip>
+                        <config>proguard.cfg</config>
+                    </proguard>
+
+                    <aaptExtraArgs>
+                        <aaptExtraArg>-0</aaptExtraArg>
+                        <aaptExtraArg>xml</aaptExtraArg>
+                    </aaptExtraArgs>
+
+                    <resourceDirectory>${project.basedir}/res</resourceDirectory>
+                    <extractDuplicates>true</extractDuplicates>
+                    <undeployBeforeDeploy>true</undeployBeforeDeploy>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>zipAlign</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>zipalign</goal>
+                        </goals>
+                        <configuration>
+                            <zipalign>
+                                <skip>false</skip>
+                                <verbose>true</verbose>
+                            </zipalign>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <!--
+   <profiles>
+       <profile>
+           <id>sign</id>
+           <build>
+               <plugins>
+                   <plugin>
+                       <groupId>org.apache.maven.plugins</groupId>
+                       <artifactId>maven-jarsigner-plugin</artifactId>
+                       <version>1.2</version>
+                       <executions>
+                           <execution>
+                               <id>signing</id>
+                               <goals>
+                                   <goal>sign</goal>
+                               </goals>
+                               <phase>package</phase>
+                               <inherited>true</inherited>
+
+                               <configuration>
+                                   <archiveDirectory></archiveDirectory>
+
+                                   <includes>
+                                       <include>target/*.apk</include>
+                                   </includes>
+
+                                   <keystore>${android.keystore}</keystore>
+                                   <storepass>${android.storepass}</storepass>
+                                   <keypass>${android.keypass}</keypass>
+                                   <alias>ladstatt</alias>
+                                   <arguments>
+                                       <argument>-sigalg</argument>
+                                       <argument>MD5withRSA</argument>
+
+                                       <argument>-digestalg</argument>
+                                       <argument>SHA1</argument>
+                                   </arguments>
+                               </configuration>
+                           </execution>
+                       </executions>
+                   </plugin>
+
+                   <plugin>
+                       <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                       <artifactId>android-maven-plugin</artifactId>
+                       <inherited>true</inherited>
+                       <configuration>
+                           <sign>
+                               <debug>false</debug>
+                           </sign>
+                       </configuration>
+                   </plugin>
+               </plugins>
+           </build>
+       </profile>
+   </profiles>
+         -->
+
+
+</project>

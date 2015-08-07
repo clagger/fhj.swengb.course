@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.ladstatt.fhj</groupId>
+    <artifactId>pom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>fhj.main</name>
+    <properties>
+        <project.build.timestamp>${maven.build.timestamp}</project.build.timestamp>
+        <maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <scalaVersion>2.11.6</scalaVersion>
+    </properties>
+
+
+    <developers>
+        <developer>
+            <name>Robert Ladstaetter</name>
+            <id>lad</id>
+            <email>rladstaetter@gmail.com</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>module01</module>
+        <!--
+        <module>module02</module>
+        <module>module03</module>
+        <module>module04</module>
+        <module>module05</module>
+        <module>module06</module>
+        <module>module07</module>
+        <module>module08</module>
+        <module>module09</module>
+        <module>module10</module> -->
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${scalaVersion}</scalaVersion>
+                    <jvmArgs>
+                        <jvmArg>-client</jvmArg>
+                        <jvmArg>-Xms64m</jvmArg>
+                        <jvmArg>-Xmx2G</jvmArg>
+                    </jvmArgs>
+                    <javacArgs>
+                        <javacArg>-source</javacArg>
+                        <javacArg>1.7</javacArg>
+                        <javacArg>-target</javacArg>
+                        <javacArg>1.7</javacArg>
+                    </javacArgs>
+                    <args>
+                        <!-- TODO ACTIVATE   <arg>-Xfatal-warnings</arg> -->
+                        <!-- TODO ACTIVATE     <arg>-Yno-adapted-args</arg> -->
+                        <arg>-Xlint</arg>
+                        <arg>-Ywarn-dead-code</arg>
+                        <arg>-Ywarn-numeric-widen</arg>
+                        <arg>-Ywarn-value-discard</arg>
+                        <arg>-deprecation</arg>
+                        <arg>-encoding</arg>
+                        <arg>UTF-8</arg>
+                        <arg>-feature</arg>
+                        <arg>-language:existentials</arg>
+                        <arg>-language:higherKinds</arg>
+                        <arg>-language:implicitConversions</arg>
+                        <arg>-optimise</arg>
+                        <arg>-target:jvm-1.6</arg>
+                        <arg>-unchecked</arg>
+                    </args>
+                    <recompileMode>incremental</recompileMode>
+                    <useZincServer>true</useZincServer>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <skipMain>true</skipMain>
+                    <skip>true</skip>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>net.alchim31.maven</groupId>
+                    <artifactId>scala-maven-plugin</artifactId>
+                    <version>3.2.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scalaVersion}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
