@@ -9,9 +9,9 @@ class PersonTest {
     assertEquals("rladstaetter", People.rladstaetter.userId)
   }
 
-  @Test def testHansMueller(): Unit = {
-    val s = Student("Hans", "Müller", "awesomecoder", 0)
-    assertEquals("hmueller", s.userId)
+  @Test def testSpecialchars(): Unit = {
+    val s = Student("Robert", "Ladstätter", "awesomecoder", 0)
+    assertEquals("rladstaetter", s.userId)
   }
 
 
