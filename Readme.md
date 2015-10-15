@@ -24,6 +24,7 @@ Introduction
 
 ## Links
 
+- [Main Course POM](https://gist.githubusercontent.com/rladstaetter/82bdb5809e7e3e2aa506/raw/bc25cc008c091936f30258d041f16cad0b7cd8b1/pom.xml)
 - [FP 101](https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0)
 
 
