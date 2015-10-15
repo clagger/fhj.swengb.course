@@ -41,12 +41,16 @@ object People {
     val src = getClass.getResourceAsStream("/fhj/swengb/students.csv")
     assert(src != null, "Could not find student definition file")
     (for (l <- io.Source.fromInputStream(src).getLines()) yield {
-      val Array(group, secondName, firstName) = l.split(",")
-      Student(firstName, secondName, "", group.toInt)
+      val Array(group, secondName, firstName, githubUsername) = l.split(",")
+      Student(firstName, secondName, githubUsername, group.toInt)
     }).toSet
   }
 
   val students: Set[Student] = mkStudents() ++ Set(exampleStudent)
+
+  val studentGroup1 = students.filter(_.group == 1)
+  val studentGroup2 = students.filter(_.group == 2)
+  val studentGroup3 = students.filter(_.group == 3)
 
 }
 

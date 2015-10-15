@@ -8,7 +8,7 @@ import java.util.regex.Pattern
  */
 sealed trait Person {
 
-  def gitHubUserName: String
+  def githubUsername: String
 
   def firstName: String
 
@@ -40,6 +40,6 @@ sealed trait Person {
 
 }
 
-case class Speaker(firstName: String, secondName: String, gitHubUserName: String, groupId: Int) extends Person
+case class Speaker(firstName: String, secondName: String, githubUsername: String, groupId: Int) extends Person
 
-case class Student(firstName: String, secondName: String, gitHubUserName: String, group: Int) extends Person
+case class Student(firstName: String, secondName: String, githubUsername: String, group: Int) extends Person
