@@ -3,14 +3,14 @@ package fhj.swengb
 import java.net.URL
 
 import org.junit.Assert._
-import org.junit.Test
+import org.junit.{Ignore, Test}
 
 import scala.util.Try
 
 class PersonTest {
 
   @Test def testRladstaetter(): Unit = {
-    assertEquals("rladstaetter", People.rladstaetter.userId)
+    assertEquals("rladstaetter", Speakers.rladstaetter.userId)
   }
 
   @Test def testSpecialchars(): Unit = {
@@ -20,22 +20,25 @@ class PersonTest {
 
   def checkStudentsForGithubAccount(groupId: Int): Unit = {
     val studentsWithUnkownGithub =
-      People.students.filter(_.githubUsername == "XXXXX")
+      Students.students.filter(_.githubUsername == "XXXXX")
     val groupedStudents: Map[Int, Seq[Student]] = studentsWithUnkownGithub.toSeq.sortWith((a, b) => a.secondName.compareTo(b.secondName) < 0).groupBy(s => s.group)
-    val students = groupedStudents(groupId)
-    assertEquals("Following students have no known github account: \n" + students.map(_.longName).mkString("\n"), 0, students.size)
+    val someStudents = groupedStudents.get(groupId)
+    if (someStudents.isDefined) {
+      val students = someStudents.get
+      assertEquals("Following students have no known github account: \n" + students.map(_.longName).mkString("\n"), 0, students.size)
+    }
   }
 
   // Elza Karimova
   // Luca Niederdorfer
-  @Test def testGroup1(): Unit = checkStudentsForGithubAccount(1)
+  @Ignore @Test def testGroup1(): Unit = checkStudentsForGithubAccount(1)
 
   // Granit Hoxha
   // Julia Johansson
   // Elke Keck
   // Georg Meizenitsch
   // Wolfgang Steinkellner
-  @Test def testGroup2(): Unit = checkStudentsForGithubAccount(2)
+  @Ignore @Test def testGroup2(): Unit = checkStudentsForGithubAccount(2)
 
   // René Robatsch
   // Fabian Schopper
@@ -53,10 +56,10 @@ class PersonTest {
   }
 
   // Michael Fuchs
-  @Test def existsGithubAccountGroup1(): Unit = checkGithubForStudents(People.studentGroup1)
+  @Test def existsGithubAccountGroup1(): Unit = checkGithubForStudents(Students.studentGroup1)
 
-  @Test def existsGithubAccountGroup2(): Unit = checkGithubForStudents(People.studentGroup2)
+  @Test def existsGithubAccountGroup2(): Unit = checkGithubForStudents(Students.studentGroup2)
 
-  @Test def existsGithubAccountGroup3(): Unit = checkGithubForStudents(People.studentGroup3)
+  @Test def existsGithubAccountGroup3(): Unit = checkGithubForStudents(Students.studentGroup3)
 
 }

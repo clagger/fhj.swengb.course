@@ -1,4 +1,23 @@
-# Lecture 1,  13.10.2016
+# Lecture 02, 27.10.2015
+
+- Code walkthrough for persons and students
+- Tutorial assignment for 29.10
+
+
+# Lab 01, 16.10
+
+- First steps with IntelliJ
+- Scala Hello World
+- Introduction to case classes and traits
+- GitHub repositories
+
+
+## Links
+
+- [Main Course POM](https://gist.githubusercontent.com/rladstaetter/82bdb5809e7e3e2aa506/raw/fb8d006a0834674ae13fc10abb11516fab9018a7/pom.xml)
+- [FP 101](https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0)
+
+# Lecture 01, 13.10
 
 Introduction
  
@@ -13,19 +32,6 @@ Introduction
 - [https://en.wikipedia.org/wiki/PechaKucha](https://en.wikipedia.org/wiki/PechaKucha) a presentation format which keeps presentations concise and fast-paced.
 - Emailverteiler: stima14@fh-joanneum.at
 
-# Exercise 1, 16.10.2016
-
-- First steps with IntelliJ
-- Scala Hello World
-- GitHub repositories
-- Code walkthrough for gitterzinga
-- Introduction to case classes and traits
-- Tutorial assignment
-
-## Links
-
-- [Main Course POM](https://gist.githubusercontent.com/rladstaetter/82bdb5809e7e3e2aa506/raw/fb8d006a0834674ae13fc10abb11516fab9018a7/pom.xml)
-- [FP 101](https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0)
 
 
 # Useful stuff 

@@ -13,8 +13,10 @@
     <artifactId>course</artifactId>
     <packaging>pom</packaging>
     <name>fhj.swengb.course</name>
+
     <modules>
         <module>common</module>
         <module>exercises</module>
     </modules>
+
 </project>

@@ -1,11 +1,8 @@
 package fhj.swengb
 
-import java.text.Normalizer
-import java.util.regex.Pattern
-
 /**
- * Created by lad on 24.09.15.
- */
+  * Created by lad on 24.09.15.
+  */
 sealed trait Person {
 
   def githubUsername: String
