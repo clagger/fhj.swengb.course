@@ -55,7 +55,6 @@ class PersonTest {
     assertEquals(s"For students ${gitHubAddressInvalid.mkString("[", ",", "]")} the github address could not be validated.", 0, gitHubAddressInvalid.size)
   }
 
-  // Michael Fuchs
   @Test def existsGithubAccountGroup1(): Unit = checkGithubForStudents(Students.studentGroup1)
 
   @Test def existsGithubAccountGroup2(): Unit = checkGithubForStudents(Students.studentGroup2)

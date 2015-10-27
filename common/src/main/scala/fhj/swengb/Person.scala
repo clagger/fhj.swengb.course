@@ -35,8 +35,21 @@ sealed trait Person {
     normalize(fst + secondName.toLowerCase)
   }
 
+  val gitHubHome: String = s"http://github.com/$githubUsername/"
+
+  val tutorialName: String = "fhj.swengb.assignments.tutorial"
+  val tutorialHome: String = gitHubHome + tutorialName
+
+  def mkHome: String = s" - $longName : [$githubUsername]($gitHubHome)"
+
 }
 
-case class Speaker(firstName: String, secondName: String, githubUsername: String, groupId: Int) extends Person
+case class Speaker(firstName: String,
+                   secondName: String,
+                   githubUsername: String,
+                   groupId: Int) extends Person
 
-case class Student(firstName: String, secondName: String, githubUsername: String, group: Int) extends Person
+case class Student(firstName: String,
+                   secondName: String,
+                   githubUsername: String,
+                   group: Int) extends Person
