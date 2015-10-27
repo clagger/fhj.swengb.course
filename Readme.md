@@ -1,8 +1,8 @@
-# Lecture 02, 27.10.2015
+# Lecture 02, 27.10
 
 - Code walkthrough for persons and students
 - Tutorial assignment for 29.10
-
+- [Slides](lectures/swengb-2015-02-lecture.pdf)
 
 # Lab 01, 16.10
 
