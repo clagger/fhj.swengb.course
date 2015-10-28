@@ -12,6 +12,11 @@ import scala.io.Source
   */
 object SwengbUtil {
 
+  def mkParent(file : File) : Unit = {
+    if (!file.getParentFile.exists()) {
+      file.getParentFile.mkdirs()
+    }
+  }
   def writeToFile(file: File, content: String): File = {
     Files.write(Paths.get(file.toURI), content.getBytes(StandardCharsets.UTF_8)).toFile
   }

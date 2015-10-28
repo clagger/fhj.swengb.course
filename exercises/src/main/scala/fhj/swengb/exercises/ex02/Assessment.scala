@@ -76,30 +76,26 @@ case class Assessment(name: String, student: Student) {
       yield (implSrc, testSrc)
   }
 
+  val (srcExists, testExists) = fetchContent().map { case (a, b) => (a.contains("package"), b.contains("package")) }.getOrElse((false, false))
+
+
   /**
     * This method call fetches the source code of the student to the workspace.
     */
   def generateSources(): Unit = {
 
     val targetImpl = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
-    val targetTest = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name}/${student.userId}/${Name}AssignmentTest.scala")
+    val targetTest = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}AssignmentTest.scala")
     val referenceTest = new File(s"fhj.swengb.assignments.tutorial/src/test/scala/fhj/swengb/assignments/tutorial/rladstaetter/${Name}AssignmentTest.scala")
 
-    def mkLocalEnvironment(): Unit = {
-      if (!targetImpl.getParentFile.exists()) {
-        targetImpl.getParentFile.mkdirs()
-      }
-      if (!targetTest.getParentFile.exists()) {
-        targetTest.getParentFile.mkdirs()
-      }
-    }
-
-    val content = Source.fromFile(referenceTest).mkString
-    SwengbUtil.writeToFile(targetTest, content.replaceAll("rladstaetter", student.userId))
+    SwengbUtil.mkParent(targetImpl)
+    SwengbUtil.mkParent(targetTest)
 
     for ((implSrc, testSrc) <- fetchContent()) {
       SwengbUtil.writeToFile(targetImpl, implSrc)
-      //SwengbUtil.writeToFile(targetTest,testSrc)
+      //val content = Source.fromFile(referenceTest).mkString
+      //SwengbUtil.writeToFile(targetTest, content.replaceAll("rladstaetter", student.userId))
+      SwengbUtil.writeToFile(targetTest, testSrc)
     }
 
   }
