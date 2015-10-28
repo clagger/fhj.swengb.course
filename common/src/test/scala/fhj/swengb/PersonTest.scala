@@ -3,7 +3,7 @@ package fhj.swengb
 import java.net.URL
 
 import org.junit.Assert._
-import org.junit.{Ignore, Test}
+import org.junit.Test
 
 import scala.util.Try
 
@@ -29,25 +29,16 @@ class PersonTest {
     }
   }
 
-  // Elza Karimova
   // Luca Niederdorfer
-  @Ignore @Test def testGroup1(): Unit = checkStudentsForGithubAccount(1)
+  @Test def testGroup1(): Unit = checkStudentsForGithubAccount(1)
 
-  // Granit Hoxha
-  // Julia Johansson
-  // Elke Keck
-  // Georg Meizenitsch
-  // Wolfgang Steinkellner
-  @Ignore @Test def testGroup2(): Unit = checkStudentsForGithubAccount(2)
+  @Test def testGroup2(): Unit = checkStudentsForGithubAccount(2)
 
-  // René Robatsch
-  // Fabian Schopper
-  // Markus Zsifkovits
   @Test def testGroup3(): Unit = checkStudentsForGithubAccount(3)
 
   def checkAccount(name: String): Boolean = {
     val url = new URL("https://github.com/" + name)
-    Try(io.Source.fromURL(url).mkString.contains(name)).toOption.getOrElse(false)
+    Try(SwengbUtil.fetch(url).contains(name)).toOption.getOrElse(false)
   }
 
   def checkGithubForStudents(students: Set[Student]): Unit = {

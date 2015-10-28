@@ -1,5 +1,7 @@
 package fhj.swengb
 
+import java.net.URL
+
 /**
   * Created by lad on 24.09.15.
   */
@@ -35,10 +37,10 @@ sealed trait Person {
     normalize(fst + secondName.toLowerCase)
   }
 
-  val gitHubHome: String = s"http://github.com/$githubUsername/"
-
+  val gitHubHome: String = s"https://github.com/$githubUsername/"
+             @deprecated("remove","now")
   val tutorialName: String = "fhj.swengb.assignments.tutorial"
-  val tutorialHome: String = gitHubHome + tutorialName
+  val tutorialURL: URL = new URL(gitHubHome + tutorialName)
 
   def mkHome: String = s" - $longName : [$githubUsername]($gitHubHome)"
 

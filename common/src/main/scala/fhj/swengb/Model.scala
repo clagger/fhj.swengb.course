@@ -88,8 +88,6 @@ object Students {
 
   val pnguyen: Student = Student("Phuong", "Nguyen", "nguyenhuyphuong2603", 3)
 
-  val lniederdorfer: Student = Student("Luca", "Niederdorfer", "XXXXX", 1)
-
   val tortmann: Student = Student("Thomas", "Ortmann", "tortmann", 3)
 
   val rrobatsch: Student = Student("René", "Robatsch", "robatsch14", 3)
