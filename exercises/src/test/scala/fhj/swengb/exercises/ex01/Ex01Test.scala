@@ -6,7 +6,7 @@ import org.junit.Assert._
 /**
  * Created by lad on 15.10.15.
  */
-class Exercise01Test {
+class Ex01Test {
 
   // shows how to instantiate a class
   @Test def testInstantiateClass(): Unit = {
