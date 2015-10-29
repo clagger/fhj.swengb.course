@@ -106,7 +106,7 @@ object Students {
 
   val hvidal: Student = Student("Hector", "Vidal", "MikVidal", 3)
 
-  val mwageneder: Student = Student("Maximilian", "Wageneder", "maxwageneder", 3)
+  val mwageneder: Student = Student("Maximilian", "Wageneder", "mwageneder", 3)
 
   val myildiz: Student = Student("Marcel", "Yildiz", "myildiz", 3)
 

@@ -6,7 +6,6 @@ import org.junit.{Ignore, Test}
 /**
   * Checks for all students if their directory structure is correct
   */
-@Ignore
 class TutorialSourceExists {
 
   @Test def abajric(): Unit = assert(Assessment("tutorial", Students.abajric).srcExists)

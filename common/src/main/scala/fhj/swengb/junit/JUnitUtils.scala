@@ -20,7 +20,7 @@ case class JUnitSuccess(className: String, name: String, time: Double) extends J
 
 object JUnitFailure {
   def apply(elem: Node): JUnitFailure = {
-    val msg = (elem \ "@message").text
+    val msg: String = (elem \ "@message").text
     JUnitFailure(msg)
   }
 }

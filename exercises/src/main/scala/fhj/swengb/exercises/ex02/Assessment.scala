@@ -5,7 +5,6 @@ import java.net.URL
 
 import fhj.swengb.{Student, Students, SwengbUtil}
 
-import scala.io.Source
 import scala.util.Try
 
 
@@ -21,20 +20,19 @@ object Assessment {
 
 }
 
-/**
-  * The goal of this exercise is to make use of the datamodel we introduced so far.
-  */
 case class Assessment(name: String, student: Student) {
 
   /**
     * the Name with uppercase first letter
+    *
+    * for example, "tutorial" will be "Tutorial"
     */
   val Name: String = name(0).toUpper + name.drop(1)
 
   /**
-    * the project name
+    * the assessment name
     */
-  val assignmentName: String = "fhj.swengb.assignments." + name
+  val assessmentName: String = "fhj.swengb.assignments." + name
 
   /**
     * We create a function to generate a report in the Markdown Format
@@ -50,9 +48,9 @@ case class Assessment(name: String, student: Student) {
   /**
     * the url for the assignment
     */
-  val assignmentUrl: URL = new URL(student.gitHubHome + assignmentName)
+  val assignmentUrl: URL = new URL(student.gitHubHome + assessmentName)
 
-  private val rawBase: String = s"https://raw.githubusercontent.com/${student.githubUsername}/$assignmentName/master"
+  private val rawBase: String = s"https://raw.githubusercontent.com/${student.githubUsername}/$assessmentName/master"
 
   /**
     * The URL for the assignment implementation
@@ -68,7 +66,7 @@ case class Assessment(name: String, student: Student) {
     * fetch the main page for this github repository, assert that the page contains a certain
     * string, the project name.
     */
-  lazy val gitHubRepoExists = fetchFromInternet(assignmentUrl).map(_.contains(assignmentName)).getOrElse(false)
+  lazy val gitHubRepoExists = fetchFromInternet(assignmentUrl).map(_.contains(assessmentName)).getOrElse(false)
 
   def fetchContent(): Try[(String, String)] = {
     for {implSrc <- fetchFromInternet(assignmentClazzURL)
@@ -76,8 +74,14 @@ case class Assessment(name: String, student: Student) {
       yield (implSrc, testSrc)
   }
 
-  val (srcExists, testExists) = fetchContent().map { case (a, b) => (a.contains("package"), b.contains("package")) }.getOrElse((false, false))
+  val (srcExists, testExists) = testContent.getOrElse((false, false))
 
+
+  def testContent: Try[(Boolean, Boolean)] = {
+    fetchContent().map {
+      case (a, b) => (a.contains("package"), b.contains("package"))
+    }
+  }
 
   /**
     * This method call fetches the source code of the student to the workspace.
