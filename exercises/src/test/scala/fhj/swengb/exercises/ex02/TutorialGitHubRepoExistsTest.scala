@@ -1,11 +1,12 @@
 package fhj.swengb.exercises.ex02
 
 import fhj.swengb.Students
-import org.junit.Test
+import org.junit.{Ignore, Test}
 
 /**
   * Checks for all students if they've created a certain Assignment github repo
   */
+@Ignore
 class TutorialGitHubRepoExistsTest {
 
   @Test def abajric(): Unit = assert(Assessment("tutorial", Students.abajric).gitHubRepoExists)

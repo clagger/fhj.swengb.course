@@ -1,11 +1,12 @@
 package fhj.swengb.exercises.ex02
 
 import fhj.swengb.Students
-import org.junit.Test
+import org.junit.{Ignore, Test}
 
 /**
   * Checks for all students if their directory structure is correct
   */
+@Ignore
 class TutorialTestExists {
 
   @Test def abajric(): Unit = assert(Assessment("tutorial", Students.abajric).testExists)
