@@ -1,12 +1,11 @@
 package fhj.swengb.exercises.ex02
 
 import fhj.swengb.Students
-import org.junit.{Ignore, Test}
+import org.junit.Test
 
 /**
   * Checks for all students if their directory structure is correct
   */
-@Ignore
 class TutorialTestExists {
 
   @Test def abajric(): Unit = assert(Assessment("tutorial", Students.abajric).testExists)
@@ -81,16 +80,17 @@ class TutorialTestExists {
 
 
 }
-        /*
+
+/*
 object o {
 
-  def main(args: Array[String]) {
-    Students.sortedStudents.foreach {
-      s => {
-        println(
-          s"""@Test def ${s.userId}(): Unit = assert(Assessment("tutorial",Students.${s.userId}).testExists)
-         """.stripMargin)
-      }
-    }
-  }
-}         */
+def main(args: Array[String]) {
+ Students.sortedStudents.foreach {
+   s => {
+     println(
+       s"""@Test def ${s.userId}(): Unit = assert(Assessment("tutorial",Students.${s.userId}).testExists)
+      """.stripMargin)
+   }
+ }
+}
+}  */

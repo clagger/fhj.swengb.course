@@ -1,13 +1,16 @@
 package fhj.swengb.exercises.ex02
 
+import org.junit.Assert._
 import org.junit.Test
 
-import scala.util.{Failure, Success, Try}
+import scala.util.{Failure, Random, Success, Try}
+
 
 /**
   * Created by lad on 29.10.15.
   */
 class ExampleTest {
+
 
   def o(i: Int): Try[String] = Try {
     if (i == 0)
@@ -23,6 +26,14 @@ class ExampleTest {
       null
   }
 
+
+  def veryComplexFunction(): Boolean = {
+    true
+  }
+
+  @Test def doTheTest(): Unit = {
+    assertTrue("muss true sein weil ....", veryComplexFunction())
+  }
 
   @Test def test(): Unit = {
     o(10) match {
@@ -41,5 +52,6 @@ class ExampleTest {
 
     o(10).map(s => println(s))
   }
+
 
 }

@@ -5,10 +5,11 @@ import java.net.URL
 
 import fhj.swengb.{Student, Students, SwengbUtil}
 
-import scala.util.Try
+import scala.util.{Success, Failure, Try}
 
 
 object Assessment {
+
 
   def main(args: Array[String]): Unit = {
     val assessments =
@@ -66,12 +67,14 @@ case class Assessment(name: String, student: Student) {
     * fetch the main page for this github repository, assert that the page contains a certain
     * string, the project name.
     */
-  lazy val gitHubRepoExists = fetchFromInternet(assignmentUrl).map(_.contains(assessmentName)).getOrElse(false)
+  lazy val gitHubRepoExists: Boolean =
+    fetchFromInternet(assignmentUrl).map(s => s.contains(assessmentName)).getOrElse(false)
 
   def fetchContent(): Try[(String, String)] = {
-    for {implSrc <- fetchFromInternet(assignmentClazzURL)
-         testSrc <- fetchFromInternet(assignmentTestClazzURL)}
-      yield (implSrc, testSrc)
+    for {
+      implSrc <- fetchFromInternet(assignmentClazzURL)
+      testSrc <- fetchFromInternet(assignmentTestClazzURL)
+    } yield (implSrc, testSrc)
   }
 
   val (srcExists, testExists) = testContent.getOrElse((false, false))
@@ -90,7 +93,7 @@ case class Assessment(name: String, student: Student) {
 
     val targetImpl = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
     val targetTest = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}AssignmentTest.scala")
-    val referenceTest = new File(s"fhj.swengb.assignments.tutorial/src/test/scala/fhj/swengb/assignments/tutorial/rladstaetter/${Name}AssignmentTest.scala")
+    val referenceTest = new File(s"$assessmentName/src/test/scala/fhj/swengb/assignments/$name/rladstaetter/${Name}AssignmentTest.scala")
 
     SwengbUtil.mkParent(targetImpl)
     SwengbUtil.mkParent(targetTest)
