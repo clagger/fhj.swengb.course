@@ -5,21 +5,9 @@ import java.net.URL
 
 import fhj.swengb.{Student, Students, SwengbUtil}
 
+import scala.io.Source
 import scala.util.Try
 
-
-object Assessment {
-
-
-  def main(args: Array[String]): Unit = {
-    val assessments =
-      Students.sortedStudents.map(s => Assessment("tutorial", s))
-
-    assessments.foreach(_.generateSources())
-
-  }
-
-}
 
 case class Assessment(name: String, student: Student) {
 
@@ -100,9 +88,11 @@ case class Assessment(name: String, student: Student) {
 
     for ((implSrc, testSrc) <- fetchContent()) {
       SwengbUtil.writeToFile(targetImpl, implSrc)
-      //val content = Source.fromFile(referenceTest).mkString
-      //SwengbUtil.writeToFile(targetTest, content.replaceAll("rladstaetter", student.userId))
-      SwengbUtil.writeToFile(targetTest, testSrc)
+
+      val content = Source.fromFile(referenceTest).mkString
+      SwengbUtil.writeToFile(targetTest, content.replaceAll("rladstaetter", student.userId))
+
+      //SwengbUtil.writeToFile(targetTest, testSrc)
     }
 
   }
