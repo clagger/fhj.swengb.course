@@ -1,6 +1,7 @@
-package fhj.swengb.exercises.ex02
+package fhj.swengb.assessment.tutorial
 
 import fhj.swengb.Students
+import fhj.swengb.assessment.Assessment
 import org.junit.Test
 
 /**

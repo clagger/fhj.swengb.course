@@ -1,9 +1,9 @@
-package fhj.swengb.exercises.ex02
+package fhj.swengb.assessment.tutorial
 
 import fhj.swengb.Students
-import org.junit.{Ignore, Test}
-
+import fhj.swengb.assessment.Assessment
 import org.junit.Assert._
+import org.junit.{Ignore, Test}
 
 /**
   * Checks for all students if they've created a certain Assignment github repo

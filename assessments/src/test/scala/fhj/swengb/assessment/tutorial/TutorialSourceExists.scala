@@ -1,7 +1,8 @@
-package fhj.swengb.exercises.ex02
+package fhj.swengb.assessment.tutorial
 
 import fhj.swengb.Students
-import org.junit.{Ignore, Test}
+import fhj.swengb.assessment.Assessment
+import org.junit.Test
 
 /**
   * Checks for all students if their directory structure is correct

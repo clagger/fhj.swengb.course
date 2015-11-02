@@ -1,11 +1,11 @@
-package fhj.swengb.exercises.ex02
+package fhj.swengb.assessment
 
 import java.io.File
 import java.net.URL
 
 import fhj.swengb.{Student, Students, SwengbUtil}
 
-import scala.util.{Success, Failure, Try}
+import scala.util.Try
 
 
 object Assessment {

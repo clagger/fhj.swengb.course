@@ -17,6 +17,7 @@
     <modules>
         <module>common</module>
         <module>exercises</module>
+        <module>assessments</module>
     </modules>
 
 </project>
