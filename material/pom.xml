@@ -8,10 +8,10 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <groupId>fhj.swengb.exercises</groupId>
-    <artifactId>exercises</artifactId>
-    <name>fhj.swengb.exercises</name>
-    <description>Exercises</description>
+    <groupId>fhj.swengb.material</groupId>
+    <artifactId>material</artifactId>
+    <name>fhj.swengb.material</name>
+    <description>Examples, demos, apps for the lecture and the exercises</description>
 
     <dependencies>
         <dependency>

@@ -16,7 +16,7 @@
 
     <modules>
         <module>common</module>
-        <module>exercises</module>
+        <module>material</module>
         <module>assessments</module>
     </modules>
 
