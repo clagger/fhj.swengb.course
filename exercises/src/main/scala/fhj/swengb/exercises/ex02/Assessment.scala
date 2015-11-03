@@ -15,7 +15,6 @@ object Assessment {
       Students.sortedStudents.map(s => Assessment("tutorial", s))
 
     assessments.foreach(_.generateSources())
-
   }
 
 }
