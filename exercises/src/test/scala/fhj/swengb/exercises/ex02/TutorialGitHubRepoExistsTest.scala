@@ -2,13 +2,19 @@ package fhj.swengb.exercises.ex02
 
 import fhj.swengb.Students
 import org.junit.{Ignore, Test}
-                                   import org.junit.Assert._
+
+import org.junit.Assert._
+
 /**
   * Checks for all students if they've created a certain Assignment github repo
   */
 class TutorialGitHubRepoExistsTest {
 
-  @Test def abajric(): Unit = assert(Assessment("tutorial", Students.abajric).gitHubRepoExists)
+  @Test def abajric(): Unit = {
+    val result = Assessment("tutorial", Students.abajric).gitHubRepoExists
+    assertTrue(result)
+  }
+
 
   @Test def jblazevic(): Unit = assert(Assessment("tutorial", Students.jblazevic).gitHubRepoExists)
 
@@ -80,7 +86,7 @@ class TutorialGitHubRepoExistsTest {
 
 
 }
-       /*
+        /*
 object o {
 
   def main(args: Array[String]) {
@@ -92,4 +98,4 @@ object o {
       }
     }
   }
-}        */
+}     */
