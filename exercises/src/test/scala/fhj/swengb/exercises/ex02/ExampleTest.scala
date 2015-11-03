@@ -1,6 +1,7 @@
 package fhj.swengb.exercises.ex02
 
 import org.junit.Test
+import org.junit.Assert._
 
 import scala.util.{Failure, Success, Try}
 
@@ -16,12 +17,16 @@ class ExampleTest {
       ???
   }
 
+
+
+
   def aString(i: Int): String = {
     if (i != 0)
       i.toString
     else
       null
   }
+
 
 
   @Test def test(): Unit = {
