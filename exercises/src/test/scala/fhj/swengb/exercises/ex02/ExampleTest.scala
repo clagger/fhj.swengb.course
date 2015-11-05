@@ -4,6 +4,7 @@ import org.junit.Test
 
 import scala.util.{Failure, Success, Try}
 
+import org.junit.Assert._
 /**
   * Created by lad on 29.10.15.
   */

@@ -66,7 +66,7 @@ case class Assessment(name: String, student: Student) {
     * fetch the main page for this github repository, assert that the page contains a certain
     * string, the project name.
     */
-  lazy val gitHubRepoExists = fetchFromInternet(assignmentUrl).map(_.contains(assessmentName)).getOrElse(false)
+  lazy val gitHubRepoExists: Boolean = fetchFromInternet(assignmentUrl).map(_.contains(assessmentName)).getOrElse(false)
 
   def fetchContent(): Try[(String, String)] = {
     for {implSrc <- fetchFromInternet(assignmentClazzURL)
