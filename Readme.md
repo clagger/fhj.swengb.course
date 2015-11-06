@@ -1,8 +1,20 @@
+# Lecture 03, 3.11
+
+- Code walkthrough: List as an algebraic datatype
+- [Slides](material/presentations/lecture03.pdf)
+
+# Lab 02, 29.10
+
+- Tutorial Assignment
+- Try / Option
+- Code walkthrough 'Abgabesystem'
+- [Slides](material/presentations/lab02.pdf)
+
 # Lecture 02, 27.10
 
 - Code walkthrough for persons and students
 - Tutorial assignment for 29.10
-- [Slides](lectures/swengb-2015-02-lecture.pdf)
+- [Slides](material/presentations/lecture02.pdf)
 
 # Lab 01, 16.10
 
@@ -10,10 +22,11 @@
 - Scala Hello World
 - Introduction to case classes and traits
 - GitHub repositories
+- [Slides](material/presentations/lab01.pdf)
 
 # Lecture 01, 13.10
 
-Introduction
+- Introduction
  
 # Links
 
