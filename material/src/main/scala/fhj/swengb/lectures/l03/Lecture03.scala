@@ -10,13 +10,14 @@ package fhj.swengb.lectures.l03
   * always assuming that a Dog is a subtype of Animal.
   *
   * @tparam A
+  *
   */
 sealed trait SwengBList[+A]
 
 // 'Nothing' is a subtype of every other type
 case object SwengBNil extends SwengBList[Nothing]
 
-case class SwengBCons[+A](a: A, tail: SwengBList[A]) extends SwengBList[A]
+case class SwengBCons[+A](head: A, tail: SwengBList[A]) extends SwengBList[A]
 
 // companion object
 object SwengBList {
