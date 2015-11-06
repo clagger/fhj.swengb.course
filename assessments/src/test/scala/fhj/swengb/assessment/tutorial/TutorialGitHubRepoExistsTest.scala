@@ -5,6 +5,7 @@ import fhj.swengb.assessment.Assessment
 import org.junit.Assert._
 import org.junit.{Ignore, Test}
 
+// Testeintrag im tutorial zur Überprüfung
 /**
   * Checks for all students if they've created a certain Assignment github repo
   */
