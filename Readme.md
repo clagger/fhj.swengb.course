@@ -1,3 +1,8 @@
+# Lab 03, 5.11
+
+- [GitHub Tutorial](http://try.github.io/)
+- [JavaFX Scene Builder](http://gluonhq.com/open-source/scene-builder/)
+
 # Lecture 03, 3.11
 
 - Code walkthrough: List as an algebraic datatype
