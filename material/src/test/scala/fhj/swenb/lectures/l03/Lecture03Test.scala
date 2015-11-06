@@ -4,6 +4,8 @@ import fhj.swengb.lectures.l03.SwengBList
 import org.junit.Assert._
 import org.junit.Test
 
+//Testeintrag
+
 /**
   * Created by lad on 02.11.15.
   */
