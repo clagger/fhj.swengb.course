@@ -1,4 +1,4 @@
-package fhj.swenb.lectures.l03
+package fhj.swengb.lectures.l03
 
 import fhj.swengb.lectures.l03.SwengBList
 import org.junit.Assert._
