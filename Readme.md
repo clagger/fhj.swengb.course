@@ -1,3 +1,9 @@
+# Lab 03, 5.11
+
+- [Maven Android Deployer](https://github.com/simpligility/maven-android-sdk-deployer)
+- [GitHub Tutorial](http://try.github.io/)
+- [JavaFX Scene Builder](http://gluonhq.com/open-source/scene-builder/)
+
 # Lecture 03, 3.11
 
 - Code walkthrough: List as an algebraic datatype
