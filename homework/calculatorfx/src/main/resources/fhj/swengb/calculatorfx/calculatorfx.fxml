@@ -11,7 +11,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fhj.swengb.calculatorfx.CalculatorFXController">
     <top>
-        <Label text="Helloworld" BorderPane.alignment="CENTER">
+        <Label text="CalculatorFX" BorderPane.alignment="CENTER">
             <font>
                 <Font size="29.0" />
             </font>
@@ -23,14 +23,29 @@
     <bottom>
         <TextField fx:id="displayTextField" promptText="&lt;this is the text&gt;" BorderPane.alignment="CENTER" />
     </bottom>
-    <left>
-        <Button id="green" mnemonicParsing="false" onAction="#btn1" text="1" BorderPane.alignment="CENTER" />
-    </left>
-    <right>
-        <Button id="green" mnemonicParsing="false" onAction="#btn2" text="2" BorderPane.alignment="CENTER" />
-    </right>
    <center>
-      <Button mnemonicParsing="false" onAction="#showList" text="showList" BorderPane.alignment="CENTER" />
+      <FlowPane prefHeight="338.0" prefWidth="441.0" BorderPane.alignment="CENTER">
+         <children>
+              <Button mnemonicParsing="false" onAction="#btn0" text="0" />
+              <Button mnemonicParsing="false" onAction="#btn1" text="1" />
+              <Button mnemonicParsing="false" onAction="#btn2" text="2" />
+              <Button mnemonicParsing="false" onAction="#btn3" text="3" />
+              <Button mnemonicParsing="false" onAction="#btn4" text="4" />
+              <Button mnemonicParsing="false" onAction="#btn5" text="5" />
+              <Button mnemonicParsing="false" onAction="#btn6" text="6" />
+              <Button mnemonicParsing="false" onAction="#btn7" text="7" />
+              <Button mnemonicParsing="false" onAction="#btn8" text="8" />
+              <Button mnemonicParsing="false" onAction="#btn9" text="9" />
+              <Button mnemonicParsing="false" onAction="#plus" text="+" />
+              <Button mnemonicParsing="false" onAction="#minus" text="-" />
+              <Button mnemonicParsing="false" text="*" />
+              <Button mnemonicParsing="false" text="sgn" /> <!-- changes the leading sign -->
+               <Button mnemonicParsing="false"  text="." /> <!-- attention - this allows doubles as input! -->
+              <Button mnemonicParsing="false" text="/" /> <!-- attention - this allows doubles as input! -->
+              <Button mnemonicParsing="false" text="c" /> <!-- clears current calculation to the initial state -->
+              <Button mnemonicParsing="false" onAction="#enter" text="ENTER" />
+         </children>
+      </FlowPane>
    </center>
 
 </BorderPane>
