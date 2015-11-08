@@ -3,7 +3,7 @@ package fhj.swengb.assessment
 import java.io.File
 import java.net.URL
 
-import fhj.swengb.{Student, Students, SwengbUtil}
+import fhj.swengb.{SwengbUtil, Student, Students}
 
 import scala.io.Source
 import scala.util.Try
