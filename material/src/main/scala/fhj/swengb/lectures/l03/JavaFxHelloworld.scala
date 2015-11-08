@@ -21,6 +21,7 @@ object JavaFxHelloworld {
 
 class JavaFxHelloworld extends javafx.application.Application {
 
+
   val Fxml = "/fhj/swengb/lectures/l03/Helloworld.fxml"
   val Css = "fhj/swengb/lectures/l03/buttonstyles.css"
 
