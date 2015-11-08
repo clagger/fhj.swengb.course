@@ -8,6 +8,7 @@ import javafx.scene.control.TextField
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
+
 import scala.util.control.NonFatal
 
 /**
@@ -149,6 +150,7 @@ class CalculatorFXController extends Initializable {
 
   def enter(): Unit = op(ENTER)
 
+  // abajric's implementation...
   def zero() : Unit = println("0")
 
 }
