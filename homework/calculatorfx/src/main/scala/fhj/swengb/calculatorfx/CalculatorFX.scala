@@ -149,6 +149,7 @@ class CalculatorFXController extends Initializable {
 
   def enter(): Unit = op(ENTER)
 
+  def zero() : Unit = println("0")
 
 }
 
