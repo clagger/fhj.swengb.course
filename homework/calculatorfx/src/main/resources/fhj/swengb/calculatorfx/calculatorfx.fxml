@@ -4,7 +4,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fhj.swengb.calculatorfx.CalculatorFXController">
     <center>
         <GridPane BorderPane.alignment="CENTER">
             <columnConstraints>
@@ -24,7 +24,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <TextField id="result_field" editable="false" />
+                        <TextField id="result_field" fx:id="displayTextField" editable="false" />
                     </children>
                 </GridPane>
                 <GridPane id="buttonarea" GridPane.rowIndex="1">
@@ -58,15 +58,15 @@
                                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                     </rowConstraints>
                                     <children>
-                                        <Button mnemonicParsing="false" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                                        <Button mnemonicParsing="false" text="4" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                                        <Button mnemonicParsing="false" text="1" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                                        <Button mnemonicParsing="false" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                        <Button mnemonicParsing="false" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                        <Button mnemonicParsing="false" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                        <Button mnemonicParsing="false" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                        <Button mnemonicParsing="false" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                        <Button mnemonicParsing="false" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                        <Button mnemonicParsing="false" onAction="#btn7" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                        <Button mnemonicParsing="false" onAction="#btn5" text="4" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                        <Button mnemonicParsing="false" onAction="#btn1" text="1" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                        <Button mnemonicParsing="false" onAction="#btn8" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                        <Button mnemonicParsing="false" onAction="#btn5" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                        <Button mnemonicParsing="false" onAction="#btn2" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                        <Button mnemonicParsing="false" onAction="#btn9" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                        <Button mnemonicParsing="false" onAction="#btn6" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                        <Button mnemonicParsing="false" onAction="#btn3" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                                         <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" styleClass="grey" text="C" />
                                         <Button mnemonicParsing="false" styleClass="grey" text="+/-" GridPane.columnIndex="1" />
                                         <Button mnemonicParsing="false" styleClass="grey" text="\%" GridPane.columnIndex="2" />
@@ -101,9 +101,9 @@
                             <children>
                                 <Button mnemonicParsing="false" styleClass="big-yellow" text="/" />
                                 <Button mnemonicParsing="false" styleClass="big-yellow" text="X" GridPane.rowIndex="1" />
-                                <Button mnemonicParsing="false" styleClass="big-yellow" text="-" GridPane.rowIndex="2" />
-                                <Button mnemonicParsing="false" styleClass="big-yellow" text="+" GridPane.rowIndex="3" />
-                                <Button mnemonicParsing="false" styleClass="round-red" text="E" GridPane.rowIndex="4" />
+                                <Button mnemonicParsing="false" onAction="#minus" styleClass="big-yellow" text="-" GridPane.rowIndex="2" />
+                                <Button mnemonicParsing="false" onAction="#plus" styleClass="big-yellow" text="+" GridPane.rowIndex="3" />
+                                <Button mnemonicParsing="false" onAction="#enter" styleClass="round-red" text="E" GridPane.rowIndex="4" />
                             </children>
                         </GridPane>
                     </children>
