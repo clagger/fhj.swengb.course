@@ -1,6 +1,6 @@
 # Lecture 04, 10.11
 
-- [Slides](material/presentations/lecture03.pdf)
+- [Slides](material/presentations/lecture04.pdf)
 
 # Lab 03, 5.11
 
