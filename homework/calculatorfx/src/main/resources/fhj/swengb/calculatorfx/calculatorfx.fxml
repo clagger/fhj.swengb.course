@@ -24,7 +24,7 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <TextField id="result_field" />
+                        <TextField id="result_field" editable="false" />
                     </children>
                 </GridPane>
                 <GridPane id="buttonarea" GridPane.rowIndex="1">
