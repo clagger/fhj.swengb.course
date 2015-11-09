@@ -7,36 +7,6 @@
     -fx-font-weight: bold;
 }
 
-/* removes "glow" (blue outline) after pressing a button
-.button:focused {
-    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
-    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
-    -fx-background-radius: 3px, 3px, 2px, 1px;
-} */
-
-/*.button:armed {
-    -fx-color: green;
-}*/
-
-
-
-/*
-#buttons-orange .button {
-    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, orange;
-}  see modena.css */
-
-
-
-/*.buttons-gray Button {
-
-
-  -fx-font-family: arial;
-  -fx-color: #1C1C1C !important;
-  -fx-font-size: 14px;
-  -fx-padding: 15px 15px;
-  -fx-border: 1px solid #A3A3A3;
-  -fx-background-color: linear-gradient(top,  #EEEEEE,  #CFCFCF);
-}*/
 
 // see http://fxexperience.com/2011/12/styling-fx-buttons-with-css/ for more
 .green {
