@@ -43,12 +43,15 @@ class JavaFxHelloworld extends javafx.application.Application {
 
 class HelloworldController extends Initializable {
 
+  var variable : Int = _
+
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
   }
 
-  def clicked(): Unit = {
+  def button6pressed(): Unit = {
     println("clicked")
+    variable = 6
   }
 
 }
