@@ -22,7 +22,7 @@ object CalculatorFX {
 
 class CalculatorFX extends javafx.application.Application {
 
-  val Fxml = "/fhj/swengb/calculatorfx/calc.fxml"
+  val Fxml = "/fhj/swengb/calculatorfx/calculatorfx.fxml"
   val Css = "fhj/swengb/calculatorfx/calcFx.css"
 
   val loader = new FXMLLoader(getClass.getResource(Fxml))
@@ -35,6 +35,8 @@ class CalculatorFX extends javafx.application.Application {
       stage.setScene(scene)
       stage.getScene.getStylesheets.add(Css)
       stage.show()
+      stage.setMinWidth(stage.getWidth());
+      stage.setMinHeight(stage.getHeight());
     } catch {
       case NonFatal(e) => e.printStackTrace()
     }
