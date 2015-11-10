@@ -34,6 +34,8 @@ class CalculatorFX extends javafx.application.Application {
       stage.setScene(scene)
       stage.getScene.getStylesheets.add(Css)
       stage.show()
+      stage.setMinWidth(stage.getWidth());
+      stage.setMinHeight(stage.getHeight());
     } catch {
       case NonFatal(e) => e.printStackTrace()
     }
