@@ -139,6 +139,8 @@ class CalculatorFXController extends Initializable {
 
   def percent(a: Double, b: Double): Double = a * (b/100)
 
+  def sgn (a: Double) = a * -1.0
+
   def updateDisplay(head: Double): Unit = {
     displayTextField.setText(head.formatted("%f"))
     //displayTextField.setText(head.toString)
@@ -149,7 +151,8 @@ class CalculatorFXController extends Initializable {
     try {
       op match {
         case SGN =>
-          updateDisplay(numbers.head * -1.0)
+          val a = numbers.head
+          numbers = sgn(a) :: numbers
         case ENTER =>
           numbers = mkNumber(reverseDigits) :: numbers
         case PLUS =>
