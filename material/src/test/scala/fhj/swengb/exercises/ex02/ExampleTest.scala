@@ -11,7 +11,6 @@ import scala.util.{Failure, Random, Success, Try}
   */
 class ExampleTest {
 
-
   def o(i: Int): Try[String] = Try {
     if (i == 0)
       i.toString
@@ -52,6 +51,5 @@ class ExampleTest {
 
     o(10).map(s => println(s))
   }
-
 
 }
