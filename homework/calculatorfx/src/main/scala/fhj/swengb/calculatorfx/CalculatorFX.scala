@@ -124,7 +124,7 @@ class CalculatorFXController extends Initializable {
 
   def multi(a: Double, b: Double): Double = a * b
 
-  def div(a: Double, b: Double): Double = a / b
+  def div(a: Double, b: Double): Double = b / a
 
   def percent(a: Double, b: Double): Double = a * (b/100)
 
