@@ -1,6 +1,5 @@
-package fhj.swenb.lectures.l03
+package fhj.swengb.lectures.l03
 
-import fhj.swengb.lectures.l03.SwengBList
 import org.junit.Assert._
 import org.junit.Test
 
@@ -16,7 +15,7 @@ class Lecture03Test {
 
   @Test def testProduct(): Unit = {
     val l = SwengBList(1.0, 2.0, 3.0, 4.0)
-    assertEquals(24.0, SwengBList.product(l),0.01)
+    assertEquals(24.0, SwengBList.product(l), 0.01)
   }
 
 }
