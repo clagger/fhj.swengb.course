@@ -21,8 +21,8 @@ object CalculatorFX {
 
 class CalculatorFX extends javafx.application.Application {
 
-  val Fxml = "/fhj/swengb/calculatorfx/calculatorfx.fxml"
-  val Css = "fhj/swengb/calculatorfx/calculatorfx.css"
+  val Fxml = "/fhj/swengb/calculatorfx/Helloworld.fxml"
+  val Css = "fhj/swengb/calculatorfx/buttonstyles.css"
 
   val loader = new FXMLLoader(getClass.getResource(Fxml))
 
