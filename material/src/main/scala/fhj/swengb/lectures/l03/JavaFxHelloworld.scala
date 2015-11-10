@@ -21,7 +21,9 @@ object JavaFxHelloworld {
 
 class JavaFxHelloworld extends javafx.application.Application {
 
+
   val Fxml = "/fhj/swengb/lectures/l03/Helloworld.fxml"
+  val Css = "fhj/swengb/lectures/l03/buttonstyles.css"
 
   val loader = new FXMLLoader(getClass.getResource(Fxml))
 
@@ -31,6 +33,7 @@ class JavaFxHelloworld extends javafx.application.Application {
       loader.load[Parent]() // side effect
       val scene = new Scene(loader.getRoot[Parent])
       stage.setScene(scene)
+      stage.getScene.getStylesheets.add(Css)
       stage.show()
     } catch {
       case NonFatal(e) => e.printStackTrace()
@@ -41,7 +44,9 @@ class JavaFxHelloworld extends javafx.application.Application {
 
 class HelloworldController extends Initializable {
 
-  override def initialize(location: URL, resources: ResourceBundle): Unit = {}
+  override def initialize(location: URL, resources: ResourceBundle): Unit = {
+
+  }
 
   def clicked(): Unit = {
     println("clicked")

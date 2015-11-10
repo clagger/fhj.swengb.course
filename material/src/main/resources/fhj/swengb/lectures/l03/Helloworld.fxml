@@ -21,6 +21,6 @@
 
     </center>
    <center>
-      <Button mnemonicParsing="false" onAction="#clicked" text="clickme" BorderPane.alignment="CENTER" />
+      <Button id="green" mnemonicParsing="false" onAction="#clicked" text="clickme" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
