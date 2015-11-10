@@ -176,6 +176,12 @@ class CalculatorFXController extends Initializable {
 
   def minus(): Unit = op(MINUS)
 
+  def multi(): Unit = op(MULTIPLICATION)
+
+  def div(): Unit = op(DIVISION)
+
+  def percent(): Unit = op(PERCENTAGE)
+
   def enter(): Unit = op(ENTER)
 
   def sgn(): Unit = op(SGN)
