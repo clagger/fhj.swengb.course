@@ -77,6 +77,13 @@ case object MINUS extends CalcOps
 
 case object SGN extends CalcOps
 
+
+case object MULTIPLY extends CalcOps
+case object DIVIDE extends CalcOps
+case object COMMA extends CalcOps
+case object PERCENT extends CalcOps
+case object CLEAR extends CalcOps
+
 /**
   * puts the current digits onto the numbers stack
   */
@@ -111,7 +118,7 @@ class CalculatorFXController extends Initializable {
   def op(op: CalcOps): Unit = {
     op match {
       case SGN =>
-        println(numbers.head * -1)
+        //println(numbers.head * -1)
         updateDisplay(numbers.head * -1)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
@@ -119,8 +126,14 @@ class CalculatorFXController extends Initializable {
         numbers = mkNumber(reverseDigits) :: numbers
         val a = numbers.head
         val b = numbers.tail.head
+        println(plus(a,b))
         numbers = plus(a, b) :: numbers.tail.tail
       case MINUS => ???
+      case MULTIPLY => ???
+      case DIVIDE => ???
+      case COMMA => ???
+      case PERCENT => ???
+      case CLEAR => ???
       case _ => ???
     }
     updateDisplay(numbers.head)
@@ -132,25 +145,25 @@ class CalculatorFXController extends Initializable {
     number
   }
 
-  def btn0(): Unit = emit(0)
+  def zero(): Unit = emit(0)
 
-  def btn1(): Unit = emit(1)
+  def one(): Unit = emit(1)
 
-  def btn2(): Unit = emit(2)
+  def two(): Unit = emit(2)
 
-  def btn3(): Unit = emit(3)
+  def three(): Unit = emit(3)
 
-  def btn4(): Unit = emit(4)
+  def four(): Unit = emit(4)
 
-  def btn5(): Unit = emit(5)
+  def five(): Unit = emit(5)
 
-  def btn6(): Unit = emit(6)
+  def six(): Unit = emit(6)
 
-  def btn7(): Unit = emit(7)
+  def seven(): Unit = emit(7)
 
-  def btn8(): Unit = emit(8)
+  def eight(): Unit = emit(8)
 
-  def btn9(): Unit = emit(9)
+  def nine(): Unit = emit(9)
 
   def plus(): Unit = op(PLUS)
 
@@ -159,6 +172,16 @@ class CalculatorFXController extends Initializable {
   def enter(): Unit = op(ENTER)
 
   def sgn(): Unit = op(SGN)
+
+  def multiply(): Unit = op(MULTIPLY)
+
+  def divide(): Unit = op(DIVIDE)
+
+  def comma(): Unit = op(COMMA)
+
+  def percent(): Unit = op(PERCENT)
+
+  def clear(): Unit = op(CLEAR)
 
 }
 
