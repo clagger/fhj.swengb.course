@@ -75,6 +75,9 @@ case object PLUS extends CalcOps
   */
 case object MINUS extends CalcOps
 
+
+case object SGN extends CalcOps
+
 /**
   * puts the current digits onto the numbers stack
   */
@@ -102,11 +105,15 @@ class CalculatorFXController extends Initializable {
   def plus(a: Double, b: Double): Double = a + b
 
   def updateDisplay(head: Double): Unit = {
-    displayTextField.setText(head.formatted("%f"))
+    //displayTextField.setText(head.formatted("%f"))
+    displayTextField.setText(head.toString)
   }
 
   def op(op: CalcOps): Unit = {
     op match {
+      case SGN =>
+        println(numbers.head * -1)
+        updateDisplay(numbers.head * -1)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
       case PLUS =>
@@ -152,6 +159,7 @@ class CalculatorFXController extends Initializable {
 
   def enter(): Unit = op(ENTER)
 
+  def sgn(): Unit = op(SGN)
 
 }
 
