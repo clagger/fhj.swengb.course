@@ -76,6 +76,9 @@ case object PLUS extends CalcOps
 case object MINUS extends CalcOps
 
 
+/**
+  * tries to whether change the positive number into an negative and vice versa.
+  */
 case object SGN extends CalcOps
 
 /**
@@ -113,7 +116,7 @@ class CalculatorFXController extends Initializable {
     op match {
       case SGN =>
         println(numbers.head * -1)
-        updateDisplay(numbers.head * -1)
+        numbers = mkNumber(reverseDigits) :: numbers //updateDisplay(numbers.head * -1)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
       case PLUS =>
