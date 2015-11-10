@@ -94,6 +94,11 @@ case object SGN extends CalcOps
 case object PERCENTAGE extends CalcOps
 
 /**
+  * clears the number stack and resets all calculated operations
+  */
+case object CLEAR extends CalcOps
+
+/**
   * puts the current digits onto the numbers stack
   */
 case object ENTER extends CalcOps
@@ -123,7 +128,7 @@ class CalculatorFXController extends Initializable {
 
   def multi(a: Double, b: Double): Double = a * b
 
-  def div(a: Double, b: Double): Double = a / b
+  def div(a: Double, b: Double): Double = b / a
 
   def percent(a: Double, b: Double): Double = a * (b/100)
 
@@ -164,6 +169,8 @@ class CalculatorFXController extends Initializable {
         val a = numbers.head
         val b = numbers.tail.head
         numbers = percent(a, b) :: numbers.tail.tail
+      case CLEAR =>
+        numbers = (mkNumber(reverseDigits) :: numbers).diff(numbers)
       case _ => ???
     }
     updateDisplay(numbers.head)
@@ -208,6 +215,8 @@ class CalculatorFXController extends Initializable {
   def enter(): Unit = op(ENTER)
 
   def sgn(): Unit = op(SGN)
+
+  def clear(): Unit = op(CLEAR)
 
 }
 

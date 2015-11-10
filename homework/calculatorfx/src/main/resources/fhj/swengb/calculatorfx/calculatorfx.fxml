@@ -67,7 +67,7 @@
                                         <Button mnemonicParsing="false" onAction="#btn9" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                         <Button mnemonicParsing="false" onAction="#btn6" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                         <Button mnemonicParsing="false" onAction="#btn3" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                        <Button mnemonicParsing="false" styleClass="grey" text="C" />
+                                        <Button mnemonicParsing="false" onAction="#clear" styleClass="grey" text="C" />
                                         <Button mnemonicParsing="false" onAction="#sgn" styleClass="grey" text="+/-" GridPane.columnIndex="1" />
                                         <Button mnemonicParsing="false" onAction="#percent" styleClass="grey" text="\%" GridPane.columnIndex="2" />
                                     </children>
