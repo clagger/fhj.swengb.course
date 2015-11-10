@@ -185,7 +185,8 @@ class CalculatorFXController extends Initializable {
           val a = numbers.head
           val b = numbers.tail.head
           numbers = percent(a, b) :: numbers.tail.tail
-        case CLEAR => ???
+        case CLEAR =>
+          numbers = (mkNumber(reverseDigits) :: numbers).diff(numbers)
         case COMMA => ???
         case _ => ???
       }
