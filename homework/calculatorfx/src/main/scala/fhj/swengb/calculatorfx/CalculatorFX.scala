@@ -74,8 +74,25 @@ case object PLUS extends CalcOps
   */
 case object MINUS extends CalcOps
 
+/**
+  * tries to execute a 'multiplication' on the number stack
+  */
+case object MULTIPLICATION extends CalcOps
 
+/**
+  * tries to execute a 'division' on the number stack
+  */
+case object DIVISION extends CalcOps
+
+/**
+  * tries to execute a 'sign change' on the number stack
+  */
 case object SGN extends CalcOps
+
+/**
+  * tries to execute a 'percentage calculation' on the number stack
+  */
+case object PERCENTAGE extends CalcOps
 
 /**
   * puts the current digits onto the numbers stack
@@ -106,13 +123,13 @@ class CalculatorFXController extends Initializable {
   def updateDisplay(head: Double): Unit = {
     //displayTextField.setText(head.formatted("%f"))
     displayTextField.setText(head.toString)
+
   }
 
   def op(op: CalcOps): Unit = {
     op match {
       case SGN =>
-        println(numbers.head * -1)
-        updateDisplay(numbers.head * -1)
+        updateDisplay(numbers.head * -1.0)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
       case PLUS =>
@@ -121,6 +138,9 @@ class CalculatorFXController extends Initializable {
         val b = numbers.tail.head
         numbers = plus(a, b) :: numbers.tail.tail
       case MINUS => ???
+      case MULTIPLICATION => ???
+      case DIVISION => ???
+      case PERCENTAGE => ???
       case _ => ???
     }
     updateDisplay(numbers.head)
