@@ -99,6 +99,11 @@ case object PERCENTAGE extends CalcOps
   */
 case object ENTER extends CalcOps
 
+/**
+  * clears screen and deletes the values in the list
+  */
+case object CLEAR extends CalcOps
+
 // TODO implement other operations
 
 class CalculatorFXController extends Initializable {
@@ -116,6 +121,7 @@ class CalculatorFXController extends Initializable {
     reverseDigits = i :: reverseDigits
     displayTextField.setText(reverseDigits.reverse.mkString(""))
   }
+
 
 
   def plus(a: Double, b: Double): Double = a + b
@@ -159,12 +165,23 @@ class CalculatorFXController extends Initializable {
         numbers = mkNumber(reverseDigits) :: numbers
         val a = numbers.head
         val b = numbers.tail.head
-        numbers = div(a, b) :: numbers.tail.tail
+        /**val c = "No division by zero"
+          if(a == 0){
+            println("No division by zero")
+            updateDisplay(100.0)
+
+          }
+          else { */
+            numbers = div(a, b) :: numbers.tail.tail
+          /**
+            }
+            * */
       case PERCENTAGE =>
         numbers = mkNumber(reverseDigits) :: numbers
         val a = numbers.head
         val b = numbers.tail.head
         numbers = percent(a, b) :: numbers.tail.tail
+      case CLEAR => ???
       case _ => ???
     }
     updateDisplay(numbers.head)
@@ -209,6 +226,8 @@ class CalculatorFXController extends Initializable {
   def enter(): Unit = op(ENTER)
 
   def sgn(): Unit = op(SGN)
+
+  def clear(): Unit = op(CLEAR)
 
 }
 
