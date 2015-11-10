@@ -116,7 +116,7 @@ class CalculatorFXController extends Initializable {
     op match {
       case SGN =>
         println(numbers.head * -1)
-        numbers = mkNumber(reverseDigits) :: numbers //updateDisplay(numbers.head * -1)
+        updateDisplay(numbers.head * -1)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
       case PLUS =>
