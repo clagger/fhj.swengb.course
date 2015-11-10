@@ -120,6 +120,12 @@ class CalculatorFXController extends Initializable {
 
   def plus(a: Double, b: Double): Double = a + b
 
+  def minus(a: Double, b: Double): Double = b - a
+
+  def multi(a: Double, b: Double): Double = a * b
+
+  def div(a: Double, b: Double): Double = b / a
+
   def updateDisplay(head: Double): Unit = {
     //displayTextField.setText(head.formatted("%f"))
     displayTextField.setText(head.toString)
@@ -137,9 +143,22 @@ class CalculatorFXController extends Initializable {
         val a = numbers.head
         val b = numbers.tail.head
         numbers = plus(a, b) :: numbers.tail.tail
-      case MINUS => ???
-      case MULTIPLICATION => ???
-      case DIVISION => ???
+      case MINUS =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = minus(a, b) :: numbers.tail.tail
+      case MULTIPLICATION =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = multi(a, b) :: numbers.tail.tail
+      case DIVISION =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = div(a, b) :: numbers.tail.tail
+
       case PERCENTAGE => ???
       case _ => ???
     }
