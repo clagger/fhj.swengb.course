@@ -21,25 +21,36 @@ object CalculatorFX {
 
 class CalculatorFX extends javafx.application.Application {
 
-  val Fxml = "/fhj/swengb/calculatorfx/calculatorfx.fxml"
-  val Css = "fhj/swengb/calculatorfx/calculatorfx.css"
+  val FxmlAbajric = "/fhj/swengb/calculatorfx/calculatorfx.fxml"
+  val CssAbajric = "fhj/swengb/calculatorfx/calculatorfx.css"
 
-  val loader = new FXMLLoader(getClass.getResource(Fxml))
+  val FxmlDeKilla = "/fhj/swengb/calculatorfx/calculatorfx_dekilla.fxml"
+  val CssDeKilla = "fhj/swengb/calculatorfx/calculatorfx_dekilla.css"
+
+  val DefaultFxml = FxmlDeKilla
+  val DefaultCss = CssDeKilla
+
+  def mkFxmlLoader(fxml: String): FXMLLoader = {
+    new FXMLLoader(getClass.getResource(fxml))
+  }
 
   override def start(stage: Stage): Unit =
     try {
       stage.setTitle("CalculatorFX")
-      loader.load[Parent]() // side effect
-      val scene = new Scene(loader.getRoot[Parent])
-      stage.setScene(scene)
-      stage.getScene.getStylesheets.add(Css)
+      setSkin(stage, DefaultFxml, DefaultCss)
       stage.show()
-      stage.setMinWidth(stage.getWidth());
-      stage.setMinHeight(stage.getHeight());
+      stage.setMinWidth(stage.getWidth)
+      stage.setMinHeight(stage.getHeight)
     } catch {
       case NonFatal(e) => e.printStackTrace()
     }
 
+  def setSkin(stage: Stage, fxml: String, css: String): Boolean = {
+    val scene = new Scene(mkFxmlLoader(fxml).load[Parent]())
+    stage.setScene(scene)
+    stage.getScene.getStylesheets.clear()
+    stage.getScene.getStylesheets.add(css)
+  }
 }
 
 object CalcFun {
@@ -79,9 +90,13 @@ case object SGN extends CalcOps
 
 
 case object MULTIPLY extends CalcOps
+
 case object DIVIDE extends CalcOps
+
 case object COMMA extends CalcOps
+
 case object PERCENT extends CalcOps
+
 case object CLEAR extends CalcOps
 
 /**
@@ -126,7 +141,7 @@ class CalculatorFXController extends Initializable {
         numbers = mkNumber(reverseDigits) :: numbers
         val a = numbers.head
         val b = numbers.tail.head
-        println(plus(a,b))
+        println(plus(a, b))
         numbers = plus(a, b) :: numbers.tail.tail
       case MINUS => ???
       case MULTIPLY => ???
