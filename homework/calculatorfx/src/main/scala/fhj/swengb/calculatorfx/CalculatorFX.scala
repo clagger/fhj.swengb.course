@@ -21,8 +21,8 @@ object CalculatorFX {
 
 class CalculatorFX extends javafx.application.Application {
 
-  val FxmlAbajric = "/fhj/swengb/calculatorfx/calculatorfx.fxml"
-  val CssAbajric = "fhj/swengb/calculatorfx/calculatorfx.css"
+  val FxmlAbajric = "/fhj/swengb/calculatorfx/calculatorfx_abajric.fxml"
+  val CssAbajric = "fhj/swengb/calculatorfx/calculatorfx_abajric.css"
 
   val FxmlDeKilla = "/fhj/swengb/calculatorfx/calculatorfx_dekilla.fxml"
   val CssDeKilla = "fhj/swengb/calculatorfx/calculatorfx_dekilla.css"
@@ -160,25 +160,25 @@ class CalculatorFXController extends Initializable {
     number
   }
 
-  def zero(): Unit = emit(0)
+  def btn0(): Unit = emit(0)
 
-  def one(): Unit = emit(1)
+  def btn1(): Unit = emit(1)
 
-  def two(): Unit = emit(2)
+  def btn2(): Unit = emit(2)
 
-  def three(): Unit = emit(3)
+  def btn3(): Unit = emit(3)
 
-  def four(): Unit = emit(4)
+  def btn4(): Unit = emit(4)
 
-  def five(): Unit = emit(5)
+  def btn5(): Unit = emit(5)
 
-  def six(): Unit = emit(6)
+  def btn6(): Unit = emit(6)
 
-  def seven(): Unit = emit(7)
+  def btn7(): Unit = emit(7)
 
-  def eight(): Unit = emit(8)
+  def btn8(): Unit = emit(8)
 
-  def nine(): Unit = emit(9)
+  def btn9(): Unit = emit(9)
 
   def plus(): Unit = op(PLUS)
 

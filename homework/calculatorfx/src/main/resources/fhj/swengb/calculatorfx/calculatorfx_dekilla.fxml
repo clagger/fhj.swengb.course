@@ -51,52 +51,52 @@
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#seven" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="7" GridPane.rowIndex="2">
+        <Button mnemonicParsing="false" onAction="#btn7" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="7" GridPane.rowIndex="2">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#eight" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Button mnemonicParsing="false" onAction="#btn8" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#nine" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <Button mnemonicParsing="false" onAction="#btn9" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#four" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="4" GridPane.rowIndex="3">
+        <Button mnemonicParsing="false" onAction="#btn4" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="4" GridPane.rowIndex="3">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#five" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <Button mnemonicParsing="false" onAction="#btn5" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#six" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <Button mnemonicParsing="false" onAction="#btn6" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#one" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="1" GridPane.rowIndex="4">
+        <Button mnemonicParsing="false" onAction="#btn7" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="1" GridPane.rowIndex="4">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#two" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button mnemonicParsing="false" onAction="#btn2" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="2" GridPane.columnIndex="1" GridPane.rowIndex="4">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#three" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <Button mnemonicParsing="false" onAction="#btn3" prefHeight="83.0" prefWidth="142.0" styleClass="white" text="3" GridPane.columnIndex="2" GridPane.rowIndex="4">
             <font>
                 <Font size="24.0" />
             </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#zero" prefHeight="82.0" prefWidth="233.0" styleClass="white" text="0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+        <Button mnemonicParsing="false" onAction="#btn0" prefHeight="82.0" prefWidth="233.0" styleClass="white" text="0" GridPane.columnSpan="2" GridPane.rowIndex="5">
             <font>
                 <Font size="24.0" />
             </font>
