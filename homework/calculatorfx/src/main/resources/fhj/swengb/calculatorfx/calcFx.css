@@ -8,6 +8,10 @@
     -fx-text-fill: #395306;
 }
 
+#textfield {
+-fx-font-size: 16;
+}
+
 #grey {
     -fx-background-color: #A8A8A8;
     -fx-text-fill: #311c09;
