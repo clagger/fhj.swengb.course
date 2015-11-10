@@ -57,7 +57,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button id="green" fx:id="Multi" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="x" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button id="orange" fx:id="Multi" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="x" GridPane.columnIndex="3" GridPane.rowIndex="2">
                <font>
                   <Font size="36.0" />
                </font>
@@ -77,7 +77,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button id="green" fx:id="Minus" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button id="orange" fx:id="Minus" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="-" GridPane.columnIndex="3" GridPane.rowIndex="3">
                <font>
                   <Font size="36.0" />
                </font>
@@ -97,7 +97,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button id="green" fx:id="Plus" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button id="orange" fx:id="Plus" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="+" GridPane.columnIndex="3" GridPane.rowIndex="4">
                <font>
                   <Font size="36.0" />
                </font>
@@ -122,7 +122,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button id="green" fx:id="Equal" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <Button id="orange" fx:id="Equal" mnemonicParsing="false" prefHeight="71.0" prefWidth="153.0" text="=" GridPane.columnIndex="3" GridPane.rowIndex="5">
                <font>
                   <Font size="36.0" />
                </font>
