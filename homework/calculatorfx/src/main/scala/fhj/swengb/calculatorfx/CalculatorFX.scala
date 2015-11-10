@@ -8,7 +8,6 @@ import javafx.scene.control.TextField
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
-
 import scala.util.control.NonFatal
 
 /**
@@ -75,11 +74,24 @@ case object PLUS extends CalcOps
   */
 case object MINUS extends CalcOps
 
+/**
+  * tries to execute a 'multiplication' on the number stack
+  */
+case object MULTIPLICATION extends CalcOps
 
 /**
-  * tries to whether change the positive number into an negative and vice versa.
+  * tries to execute a 'division' on the number stack
+  */
+case object DIVISION extends CalcOps
+
+/**
+  * tries to execute a 'sign change' on the number stack
   */
 case object SGN extends CalcOps
+/**
+  * tries to execute a 'percentage calculation' on the number stack
+  */
+case object PERCENTAGE extends CalcOps
 
 /**
   * puts the current digits onto the numbers stack
@@ -107,16 +119,24 @@ class CalculatorFXController extends Initializable {
 
   def plus(a: Double, b: Double): Double = a + b
 
+  def minus(a: Double, b: Double): Double = b - a
+
+  def multi(a: Double, b: Double): Double = a * b
+
+  def div(a: Double, b: Double): Double = a / b
+
+  def percent(a: Double, b: Double): Double = a * (b/100)
+
   def updateDisplay(head: Double): Unit = {
     //displayTextField.setText(head.formatted("%f"))
     displayTextField.setText(head.toString)
+
   }
 
   def op(op: CalcOps): Unit = {
     op match {
       case SGN =>
-        println(numbers.head * -1)
-        updateDisplay(numbers.head * -1)
+        updateDisplay(numbers.head * -1.0)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
       case PLUS =>
@@ -124,7 +144,26 @@ class CalculatorFXController extends Initializable {
         val a = numbers.head
         val b = numbers.tail.head
         numbers = plus(a, b) :: numbers.tail.tail
-      case MINUS => ???
+      case MINUS =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = minus(a, b) :: numbers.tail.tail
+      case MULTIPLICATION =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = multi(a, b) :: numbers.tail.tail
+      case DIVISION =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = div(a, b) :: numbers.tail.tail
+      case PERCENTAGE =>
+        numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        numbers = percent(a, b) :: numbers.tail.tail
       case _ => ???
     }
     updateDisplay(numbers.head)
@@ -159,6 +198,12 @@ class CalculatorFXController extends Initializable {
   def plus(): Unit = op(PLUS)
 
   def minus(): Unit = op(MINUS)
+
+  def multi(): Unit = op(MULTIPLICATION)
+
+  def div(): Unit = op(DIVISION)
+
+  def percent(): Unit = op(PERCENTAGE)
 
   def enter(): Unit = op(ENTER)
 
