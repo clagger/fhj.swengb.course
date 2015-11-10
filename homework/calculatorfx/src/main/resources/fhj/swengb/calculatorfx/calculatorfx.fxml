@@ -82,7 +82,7 @@
                                     </rowConstraints>
                                     <children>
                                         <Button mnemonicParsing="false" onAction="#btn0" text="0" />
-                                        <Button mnemonicParsing="false" styleClass="grey" text="." GridPane.columnIndex="1" />
+                                        <Button mnemonicParsing="false" onAction="#comma" styleClass="grey" text="." GridPane.columnIndex="1" />
                                     </children>
                                 </GridPane>
                             </children>

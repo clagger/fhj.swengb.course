@@ -104,6 +104,11 @@ case object ENTER extends CalcOps
   */
 case object CLEAR extends CalcOps
 
+/**
+  * creates a double by using a comma
+  */
+case object COMMA extends CalcOps
+
 // TODO implement other operations
 
 class CalculatorFXController extends Initializable {
@@ -182,6 +187,7 @@ class CalculatorFXController extends Initializable {
         val b = numbers.tail.head
         numbers = percent(a, b) :: numbers.tail.tail
       case CLEAR => ???
+      case COMMA => ???
       case _ => ???
     }
     updateDisplay(numbers.head)
@@ -228,6 +234,8 @@ class CalculatorFXController extends Initializable {
   def sgn(): Unit = op(SGN)
 
   def clear(): Unit = op(CLEAR)
+
+  def comma(): Unit = op(COMMA)
 
 }
 
