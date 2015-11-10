@@ -140,57 +140,57 @@ class CalculatorFXController extends Initializable {
   def percent(a: Double, b: Double): Double = a * (b/100)
 
   def updateDisplay(head: Double): Unit = {
-    //displayTextField.setText(head.formatted("%f"))
-    displayTextField.setText(head.toString)
+    displayTextField.setText(head.formatted("%f"))
+    //displayTextField.setText(head.toString)
 
   }
 
   def op(op: CalcOps): Unit = {
-    op match {
-      case SGN =>
-        updateDisplay(numbers.head * -1.0)
-      case ENTER =>
-        numbers = mkNumber(reverseDigits) :: numbers
-      case PLUS =>
-        numbers = mkNumber(reverseDigits) :: numbers
-        val a = numbers.head
-        val b = numbers.tail.head
-        numbers = plus(a, b) :: numbers.tail.tail
-      case MINUS =>
-        numbers = mkNumber(reverseDigits) :: numbers
-        val a = numbers.head
-        val b = numbers.tail.head
-        numbers = minus(a, b) :: numbers.tail.tail
-      case MULTIPLICATION =>
-        numbers = mkNumber(reverseDigits) :: numbers
-        val a = numbers.head
-        val b = numbers.tail.head
-        numbers = multi(a, b) :: numbers.tail.tail
-      case DIVISION =>
-        numbers = mkNumber(reverseDigits) :: numbers
-        val a = numbers.head
-        val b = numbers.tail.head
-        /**val c = "No division by zero"
-          if(a == 0){
-            println("No division by zero")
-            updateDisplay(100.0)
-
+    try {
+      op match {
+        case SGN =>
+          updateDisplay(numbers.head * -1.0)
+        case ENTER =>
+          numbers = mkNumber(reverseDigits) :: numbers
+        case PLUS =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = plus(a, b) :: numbers.tail.tail
+        case MINUS =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = minus(a, b) :: numbers.tail.tail
+        case MULTIPLICATION =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = multi(a, b) :: numbers.tail.tail
+        case DIVISION =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          if (numbers.head == 0.0) {
+            throw new IllegalArgumentException
           }
-          else { */
+          else {
             numbers = div(a, b) :: numbers.tail.tail
-          /**
-            }
-            * */
-      case PERCENTAGE =>
-        numbers = mkNumber(reverseDigits) :: numbers
-        val a = numbers.head
-        val b = numbers.tail.head
-        numbers = percent(a, b) :: numbers.tail.tail
-      case CLEAR => ???
-      case COMMA => ???
-      case _ => ???
+          }
+        case PERCENTAGE =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = percent(a, b) :: numbers.tail.tail
+        case CLEAR => ???
+        case COMMA => ???
+        case _ => ???
+      }
+      updateDisplay(numbers.head)
+    }catch{
+      case ex: IllegalArgumentException =>
+        displayTextField.setText("No division by zero")
     }
-    updateDisplay(numbers.head)
   }
 
   def mkNumber(revDigits: List[Int]): Double = {
