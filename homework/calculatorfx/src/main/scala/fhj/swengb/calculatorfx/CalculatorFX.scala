@@ -201,6 +201,7 @@ class CalculatorFXController extends Initializable {
           numbers = percent(a, b) :: numbers.tail.tail
         case CLEAR =>
           numbers = (mkNumber(reverseDigits) :: numbers).diff(numbers)
+          println(numbers)
         case COMMA => ???
         case _ => ???
       }
