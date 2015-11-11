@@ -27,8 +27,8 @@ class CalculatorFX extends javafx.application.Application {
   val FxmlDeKilla = "/fhj/swengb/calculatorfx/calculatorfx_dekilla.fxml"
   val CssDeKilla = "fhj/swengb/calculatorfx/calculatorfx_dekilla.css"
 
-  val DefaultFxml = FxmlDeKilla
-  val DefaultCss = CssDeKilla
+  val DefaultFxml = FxmlAbajric
+  val DefaultCss = CssAbajric
 
   def mkFxmlLoader(fxml: String): FXMLLoader = {
     new FXMLLoader(getClass.getResource(fxml))
@@ -85,24 +85,40 @@ case object PLUS extends CalcOps
   */
 case object MINUS extends CalcOps
 
+/**
+  * tries to execute a 'multiplication' on the number stack
+  */
+case object MULTIPLICATION extends CalcOps
 
+/**
+  * tries to execute a 'division' on the number stack
+  */
+case object DIVISION extends CalcOps
+
+/**
+  * tries to execute a 'sign change' on the number stack
+  */
 case object SGN extends CalcOps
 
-
-case object MULTIPLY extends CalcOps
-
-case object DIVIDE extends CalcOps
-
-case object COMMA extends CalcOps
-
-case object PERCENT extends CalcOps
-
-case object CLEAR extends CalcOps
+/**
+  * tries to execute a 'percentage calculation' on the number stack
+  */
+case object PERCENTAGE extends CalcOps
 
 /**
   * puts the current digits onto the numbers stack
   */
 case object ENTER extends CalcOps
+
+/**
+  * clears screen and deletes the values in the list
+  */
+case object CLEAR extends CalcOps
+
+/**
+  * creates a double by using a comma
+  */
+case object COMMA extends CalcOps
 
 // TODO implement other operations
 
@@ -123,35 +139,73 @@ class CalculatorFXController extends Initializable {
   }
 
 
+
   def plus(a: Double, b: Double): Double = a + b
 
+  def minus(a: Double, b: Double): Double = b - a
+
+  def multiply(a: Double, b: Double): Double = a * b
+
+  def divide(a: Double, b: Double): Double = b / a
+
+  def percent(a: Double, b: Double): Double = a * (b/100)
+
+  def sgn (a: Double) = a * -1.0
+
   def updateDisplay(head: Double): Unit = {
-    //displayTextField.setText(head.formatted("%f"))
-    displayTextField.setText(head.toString)
+    displayTextField.setText(head.formatted("%f"))
+    //displayTextField.setText(head.toString)
+
   }
 
   def op(op: CalcOps): Unit = {
-    op match {
-      case SGN =>
-        //println(numbers.head * -1)
-        updateDisplay(numbers.head * -1)
-      case ENTER =>
-        numbers = mkNumber(reverseDigits) :: numbers
-      case PLUS =>
-        numbers = mkNumber(reverseDigits) :: numbers
-        val a = numbers.head
-        val b = numbers.tail.head
-        println(plus(a, b))
-        numbers = plus(a, b) :: numbers.tail.tail
-      case MINUS => ???
-      case MULTIPLY => ???
-      case DIVIDE => ???
-      case COMMA => ???
-      case PERCENT => ???
-      case CLEAR => ???
-      case _ => ???
+    try {
+      op match {
+        case SGN =>
+          val a = numbers.head
+          numbers = sgn(a) :: numbers
+        case ENTER =>
+          numbers = mkNumber(reverseDigits) :: numbers
+        case PLUS =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = plus(a, b) :: numbers.tail.tail
+        case MINUS =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = minus(a, b) :: numbers.tail.tail
+        case MULTIPLICATION =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = multiply(a, b) :: numbers.tail.tail
+        case DIVISION =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          if (numbers.head == 0.0) {
+            throw new IllegalArgumentException
+          }
+          else {
+            numbers = divide(a, b) :: numbers.tail.tail
+          }
+        case PERCENTAGE =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = percent(a, b) :: numbers.tail.tail
+        case CLEAR =>
+          numbers = (mkNumber(reverseDigits) :: numbers).diff(numbers)
+        case COMMA => ???
+        case _ => ???
+      }
+      updateDisplay(numbers.head)
+    }catch{
+      case ex: IllegalArgumentException =>
+        displayTextField.setText("No division by zero")
     }
-    updateDisplay(numbers.head)
   }
 
   def mkNumber(revDigits: List[Int]): Double = {
@@ -184,19 +238,19 @@ class CalculatorFXController extends Initializable {
 
   def minus(): Unit = op(MINUS)
 
+  def multiply(): Unit = op(MULTIPLICATION)
+
+  def divide(): Unit = op(DIVISION)
+
+  def percent(): Unit = op(PERCENTAGE)
+
   def enter(): Unit = op(ENTER)
 
   def sgn(): Unit = op(SGN)
 
-  def multiply(): Unit = op(MULTIPLY)
-
-  def divide(): Unit = op(DIVIDE)
+  def clear(): Unit = op(CLEAR)
 
   def comma(): Unit = op(COMMA)
-
-  def percent(): Unit = op(PERCENT)
-
-  def clear(): Unit = op(CLEAR)
 
 }
 
