@@ -72,7 +72,7 @@ object CalcFun {
 
 /**
   * all supported operations should extend this trait
-  */
+*/
 sealed trait CalcOps
 
 /**
@@ -87,7 +87,6 @@ case object MINUS extends CalcOps
 
 
 case object SGN extends CalcOps
-
 
 case object MULTIPLY extends CalcOps
 
@@ -114,16 +113,25 @@ class CalculatorFXController extends Initializable {
 
   var numbers: List[Double] = List()
 
+  var trigger:Boolean = true
+
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
   }
 
   def emit(i: Int): Unit = {
     reverseDigits = i :: reverseDigits
     displayTextField.setText(reverseDigits.reverse.mkString(""))
+    trigger = true
   }
 
 
   def plus(a: Double, b: Double): Double = a + b
+
+  def minus(a:Double, b:Double):Double = a - b
+
+  def multiply(a:Double, b:Double): Double = a * b
+
+  def divide(a:Double, b:Double):Double = a / b
 
   def updateDisplay(head: Double): Unit = {
     //displayTextField.setText(head.formatted("%f"))
@@ -137,15 +145,43 @@ class CalculatorFXController extends Initializable {
         updateDisplay(numbers.head * -1)
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
+        trigger = false
       case PLUS =>
-        numbers = mkNumber(reverseDigits) :: numbers
+        if(trigger) numbers = mkNumber(reverseDigits) :: numbers
         val a = numbers.head
         val b = numbers.tail.head
+        trigger=false
         println(plus(a, b))
+        println(numbers)
         numbers = plus(a, b) :: numbers.tail.tail
-      case MINUS => ???
-      case MULTIPLY => ???
-      case DIVIDE => ???
+        println(numbers)
+      case MINUS =>
+        if(trigger) numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.tail.head
+        val b = numbers.head
+        trigger=false
+        println(minus(a,b))
+        println(numbers)
+        numbers = minus(a,b) :: numbers.tail.tail
+        println(numbers)
+      case MULTIPLY =>
+        if(trigger) numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.head
+        val b = numbers.tail.head
+        trigger=false
+        println(multiply(a,b))
+        println(numbers)
+        numbers = multiply(a,b) :: numbers.tail.tail
+        println(numbers)
+      case DIVIDE =>
+        if(trigger) numbers = mkNumber(reverseDigits) :: numbers
+        val a = numbers.tail.head
+        val b = numbers.head
+        trigger=false
+        println(divide(a,b))
+        println(numbers)
+        numbers = divide(a,b) :: numbers.tail.tail
+        println(numbers)
       case COMMA => ???
       case PERCENT => ???
       case CLEAR => ???
