@@ -1,3 +1,7 @@
+# Lecture 04, 10.11
+
+- [Slides](material/presentations/lecture04.pdf)
+
 # Lab 03, 5.11
 
 - [Maven Android Deployer](https://github.com/simpligility/maven-android-sdk-deployer)
