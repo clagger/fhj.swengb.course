@@ -27,8 +27,8 @@ class CalculatorFX extends javafx.application.Application {
   val FxmlDeKilla = "/fhj/swengb/calculatorfx/calculatorfx_dekilla.fxml"
   val CssDeKilla = "fhj/swengb/calculatorfx/calculatorfx_dekilla.css"
 
-  val DefaultFxml = FxmlDeKilla
-  val DefaultCss = CssDeKilla
+  val DefaultFxml = FxmlAbajric
+  val DefaultCss = CssAbajric
 
   def mkFxmlLoader(fxml: String): FXMLLoader = {
     new FXMLLoader(getClass.getResource(fxml))
@@ -144,9 +144,9 @@ class CalculatorFXController extends Initializable {
 
   def minus(a: Double, b: Double): Double = b - a
 
-  def multi(a: Double, b: Double): Double = a * b
+  def multiply(a: Double, b: Double): Double = a * b
 
-  def div(a: Double, b: Double): Double = b / a
+  def divide(a: Double, b: Double): Double = b / a
 
   def percent(a: Double, b: Double): Double = a * (b/100)
 
@@ -180,7 +180,7 @@ class CalculatorFXController extends Initializable {
           numbers = mkNumber(reverseDigits) :: numbers
           val a = numbers.head
           val b = numbers.tail.head
-          numbers = multi(a, b) :: numbers.tail.tail
+          numbers = multiply(a, b) :: numbers.tail.tail
         case DIVISION =>
           numbers = mkNumber(reverseDigits) :: numbers
           val a = numbers.head
@@ -189,7 +189,7 @@ class CalculatorFXController extends Initializable {
             throw new IllegalArgumentException
           }
           else {
-            numbers = div(a, b) :: numbers.tail.tail
+            numbers = divide(a, b) :: numbers.tail.tail
           }
         case PERCENTAGE =>
           numbers = mkNumber(reverseDigits) :: numbers
@@ -238,9 +238,9 @@ class CalculatorFXController extends Initializable {
 
   def minus(): Unit = op(MINUS)
 
-  def multi(): Unit = op(MULTIPLICATION)
+  def multiply(): Unit = op(MULTIPLICATION)
 
-  def div(): Unit = op(DIVISION)
+  def divide(): Unit = op(DIVISION)
 
   def percent(): Unit = op(PERCENTAGE)
 

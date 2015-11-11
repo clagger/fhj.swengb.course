@@ -99,8 +99,8 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button mnemonicParsing="false" onAction="#div" styleClass="big-yellow" text="/" />
-                                <Button mnemonicParsing="false" onAction="#multi" styleClass="big-yellow" text="X" GridPane.rowIndex="1" />
+                                <Button mnemonicParsing="false" onAction="#divide" styleClass="big-yellow" text="/" />
+                                <Button mnemonicParsing="false" onAction="#multiply" styleClass="big-yellow" text="X" GridPane.rowIndex="1" />
                                 <Button mnemonicParsing="false" onAction="#minus" styleClass="big-yellow" text="-" GridPane.rowIndex="2" />
                                 <Button mnemonicParsing="false" onAction="#plus" styleClass="big-yellow" text="+" GridPane.rowIndex="3" />
                                 <Button mnemonicParsing="false" onAction="#enter" styleClass="round-red" text="E" GridPane.rowIndex="4" />
