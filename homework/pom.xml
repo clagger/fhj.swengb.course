@@ -2,23 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>fhj</groupId>
-        <artifactId>swengb</artifactId>
+        <groupId>fhj.swengb</groupId>
+        <artifactId>course</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <groupId>fhj.swengb</groupId>
-    <artifactId>course</artifactId>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>fhj.swengb.homework</groupId>
+    <artifactId>homework</artifactId>
+    <name>fhj.swengb.homework</name>
+    <description>Some homework projects for SWENGB</description>
     <packaging>pom</packaging>
-    <name>fhj.swengb.course</name>
 
     <modules>
-        <module>common</module>
-        <module>material</module>
-        <module>assessments</module>
-        <module>homework</module>
+        <module>calculatorfx</module>
     </modules>
 
 </project>
