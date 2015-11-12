@@ -153,6 +153,9 @@ class CalculatorFXController extends Initializable {
 
   def sgn (a: Double) = a * -1.0
 
+  //def power(a: Double, exp: Double) = math.pow(a, exp)
+
+
   def updateDisplay(head: Double): Unit = {
     displayTextField.setText(head.formatted("%f"))
     //displayTextField.setText(head.toString)
@@ -201,7 +204,12 @@ class CalculatorFXController extends Initializable {
           numbers = percent(a, b) :: numbers.tail.tail
         case CLEAR =>
           numbers = (mkNumber(reverseDigits) :: numbers).diff(numbers)
-          println(numbers)
+        /**case POWER =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.head
+          val b = numbers.tail.head
+          numbers = power(a, b) :: numbers.tail.tail
+          */
         case COMMA => ???
         case _ => ???
       }
@@ -255,6 +263,9 @@ class CalculatorFXController extends Initializable {
   def clear(): Unit = op(CLEAR)
 
   def comma(): Unit = op(COMMA)
+
+  //def power(): Unit = op(POWER)
+
 
 }
 
