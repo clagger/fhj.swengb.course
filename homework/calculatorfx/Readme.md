@@ -39,6 +39,18 @@ can execute by pressing the button that refers to the operation you want to use.
 **Comma** -         Button **" . "**
 - **<font color=red>enables you to input decimal numbers</color>**
 
+**Comma** -         Button **" 1/x "**
+- **<font color=red>enables you to calculate fractions very easily</color>**
+
+**Comma** -         Button **" x^y "**
+- **<font color=red>enables you to use the exponential function</color>**
+
+**Comma** -         Button **" x² "**
+- **<font color=red>special and often used case of the exponential function</color>**
+
+**Comma** -         Button **" sqrt "**
+- **<font color=red>calculates the square root of a number</color>**
+
 
 ##How to use the CalculatorFX - A short tutorial##
 

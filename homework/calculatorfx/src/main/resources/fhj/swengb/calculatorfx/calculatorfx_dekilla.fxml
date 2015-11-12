@@ -139,7 +139,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-        <Button mnemonicParsing="false" onAction="#sgn" prefHeight="83.0" prefWidth="142.0" styleClass="grey" text="" GridPane.rowIndex="2">
+        <Button mnemonicParsing="false" onAction="#onedivx" prefHeight="83.0" prefWidth="142.0" styleClass="grey" text="1/x" GridPane.rowIndex="2">
            <font>
               <Font size="24.0" />
            </font>
@@ -149,7 +149,7 @@
               <Font size="24.0" />
            </font>
         </Button>
-        <Button mnemonicParsing="false" onAction="#sgn" prefHeight="83.0" prefWidth="142.0" styleClass="grey" text="" GridPane.rowIndex="6">
+        <Button mnemonicParsing="false" prefHeight="83.0" prefWidth="142.0" styleClass="grey" text="" GridPane.rowIndex="6">
            <font>
               <Font size="24.0" />
            </font>

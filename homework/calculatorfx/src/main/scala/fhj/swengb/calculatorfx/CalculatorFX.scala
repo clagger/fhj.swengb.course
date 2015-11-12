@@ -126,9 +126,15 @@ case object POWER extends CalcOps
 case object SQUARE extends CalcOps
 
 /**
+  * implements the calculation of 1 divided by a specific number
+  */
+case object ONEDIVX extends CalcOps
+
+/**
   * implements the calculation of the square root of a number
   */
 case object ROOT extends CalcOps
+
 
 /**
   * creates a double by using a comma
@@ -171,6 +177,8 @@ class CalculatorFXController extends Initializable {
 
   def root(a: Double) = math.sqrt(a)
 
+  def onedivx(a: Double) = 1/a
+
   def updateDisplay(head: Double): Unit = {
     displayTextField.setText(head.formatted("%f"))
     //displayTextField.setText(head.toString)
@@ -181,10 +189,9 @@ class CalculatorFXController extends Initializable {
     try {
       op match {
         case SGN =>
-          //numbers = mkNumber(reverseDigits) :: numbers
-          val a = numbers.head
-          val update = numbers.updated(0,sgn(a))
-          numbers = update
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.tail.head
+          numbers = sgn(a) :: numbers.tail.tail
           println(numbers)
         case ENTER =>
           numbers = mkNumber(reverseDigits) :: numbers
@@ -193,6 +200,7 @@ class CalculatorFXController extends Initializable {
           val a = numbers.head
           val b = numbers.tail.head
           numbers = plus(a, b) :: numbers.tail.tail
+          println(numbers)
         case MINUS =>
           numbers = mkNumber(reverseDigits) :: numbers
           val a = numbers.head
@@ -233,6 +241,10 @@ class CalculatorFXController extends Initializable {
           numbers = mkNumber(reverseDigits) :: numbers
           val a = numbers.tail.head
           numbers = root(a) :: numbers.tail.tail
+        case ONEDIVX =>
+          numbers = mkNumber(reverseDigits) :: numbers
+          val a = numbers.tail.head
+          numbers = onedivx(a) :: numbers.tail.tail
 
         case COMMA => ???
         case _ => updateDisplay(numbers.head) //show last input
@@ -294,6 +306,7 @@ class CalculatorFXController extends Initializable {
 
   def root(): Unit = op(ROOT)
 
+  def onedivx(): Unit = op(ONEDIVX)
 
 }
 
