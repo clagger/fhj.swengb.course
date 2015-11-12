@@ -9,6 +9,7 @@ import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
 import scala.util.control.NonFatal
+import scala.collection.mutable._
 
 /**
   * A simple calculator for JavaFX using reverse polish notation
@@ -163,7 +164,9 @@ class CalculatorFXController extends Initializable {
       op match {
         case SGN =>
           val a = numbers.head
-          numbers = sgn(a) :: numbers
+          val update = numbers.updated(0,sgn(a))
+          numbers = update
+
         case ENTER =>
           numbers = mkNumber(reverseDigits) :: numbers
         case PLUS =>
@@ -198,6 +201,7 @@ class CalculatorFXController extends Initializable {
           numbers = percent(a, b) :: numbers.tail.tail
         case CLEAR =>
           numbers = (mkNumber(reverseDigits) :: numbers).diff(numbers)
+          println(numbers)
         case COMMA => ???
         case _ => ???
       }
