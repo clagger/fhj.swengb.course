@@ -1,5 +1,3 @@
-test carina
-
 # CalculatorFX
 
 This application is a simple calculator which
