@@ -21,7 +21,7 @@ object JavaFxHelloworld {
 
 class JavaFxHelloworld extends javafx.application.Application {
 
-  val Fxml = "/fhj/swengb/lectures/l03/Helloworld.fxml"
+  val Fxml = "/fhj/swengb/lectures/l03/Calculator.fxml"
   val Css = "fhj/swengb/lectures/l03/buttonstyles.css"
 
   val loader = new FXMLLoader(getClass.getResource(Fxml))
@@ -43,12 +43,14 @@ class JavaFxHelloworld extends javafx.application.Application {
 
 class HelloworldController extends Initializable {
 
+  var variable :Int = _
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
   }
 
-  def clicked(): Unit = {
+  def ifthisButtonIsCalledIKnowItWasClieckedByTheButton6(): Unit = {
     println("clicked")
+    variable = 6
   }
 
 }
