@@ -51,6 +51,7 @@ class CalculatorFX extends javafx.application.Application {
     stage.getScene.getStylesheets.clear()
     stage.getScene.getStylesheets.add(css)
   }
+
 }
 
 object CalcFun {
