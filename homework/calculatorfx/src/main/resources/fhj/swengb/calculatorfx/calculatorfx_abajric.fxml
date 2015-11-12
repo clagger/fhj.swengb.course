@@ -73,7 +73,7 @@
                                         <Button mnemonicParsing="false" onAction="#clear" styleClass="grey" text="C" GridPane.columnIndex="1" />
                                         <Button mnemonicParsing="false" onAction="#sgn" styleClass="grey" text="+/-" GridPane.columnIndex="2" />
                                         <Button mnemonicParsing="false" onAction="#percent" styleClass="grey" text="\%" GridPane.columnIndex="3" />
-                                        <!--<Button mnemonicParsing="false" styleClass="grey" text="" />-->
+                                        <Button mnemonicParsing="false" styleClass="grey" text="" />
                                         <Button mnemonicParsing="false" onAction="#square" styleClass="grey" text="x²" GridPane.rowIndex="2" />
                                         <Button mnemonicParsing="false" onAction="#power" styleClass="grey" text="x^y" GridPane.rowIndex="1" />
                                         <Button mnemonicParsing="false" onAction="#root" styleClass="grey" text="sqrt" GridPane.rowIndex="3" />
@@ -91,7 +91,7 @@
                                     <children>
                                         <Button mnemonicParsing="false" onAction="#btn0" prefHeight="25.0" prefWidth="0.0" text="0" GridPane.columnIndex="1" />
                                         <Button mnemonicParsing="false" onAction="#comma" styleClass="grey" text="." GridPane.columnIndex="2" />
-                                        <!--<Button mnemonicParsing="false" styleClass="grey" text="" />-->
+                                        <Button mnemonicParsing="false" styleClass="grey" text="" />
                                     </children>
                                 </GridPane>
                             </children>
