@@ -1,4 +1,4 @@
-package fhj.swengb.lectures.l03
+package fhj.swengb.labs.lab03
 
 import java.net.URL
 import java.util.ResourceBundle
