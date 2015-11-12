@@ -9,7 +9,6 @@ import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
 import scala.util.control.NonFatal
-import scala.collection.mutable._
 
 /**
   * A simple calculator for JavaFX using reverse polish notation
