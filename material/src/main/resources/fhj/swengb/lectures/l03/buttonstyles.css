@@ -1,3 +1,22 @@
+#gray{
+    -fx-background-color: #D3D3D3;
+    -fx-border-color: black;
+    -fx-border-width: 0.1pt;
+
+}
+#orange{
+    -fx-background-color: orange;
+    -fx-border-color: black;
+    -fx-border-width: 0.1pt;
+
+}
+#white{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 0.1pt;
+
+}
+
 #green {
     -fx-background-color:
         linear-gradient(#f0ff35, #a9ff00),
