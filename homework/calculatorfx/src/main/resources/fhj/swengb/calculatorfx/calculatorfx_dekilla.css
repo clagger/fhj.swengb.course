@@ -1,21 +1,49 @@
-#gray{
-    -fx-background-color: #D3D3D3;
-    -fx-border-color: black;
-    -fx-border-width: 0.1pt;
-
+#calculator {
+	-fx-background-color:#000;
 }
-#orange{
-    -fx-background-color: orange;
-    -fx-border-color: black;
-    -fx-border-width: 0.1pt;
 
-}
-#white{
-    -fx-background-color: white;
-    -fx-border-color: black;
-    -fx-border-width: 0.1pt;
+#calculator .grey, #calculator .orange, #calculator .white {
+	-fx-background-insets: 1,1,1,1;
+        -fx-background-radius: 0,0,0,0;
+ }
+.grey:hover, .orange:hover, .white:hover { fx-background-insets:2,2,2,2; }
 
+#calculator .grey {
+	-fx-background-color:#888;
 }
+
+.orange {
+	-fx-background-color:orange;
+	-fx-text-fill:#fff;
+}
+
+#calculator .white {
+	-fx-background-color:#fff;
+}
+
+#calculator .gridpane {
+	-fx-background-color:#000;
+}
+
+#calculator .output {
+	-fx-text-fill:#fff;
+	-fx-padding:0 20px;
+	-fx-background-color:#000;
+	-fx-highlight-fill: orange;
+}
+
+Button:hover {
+    -fx-effect: innershadow( three-pass-box , rgba(100,100,100,0.7) , 20, 0.0 , 0 , 2 );
+}
+
+Button:pressed {
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.85) , 20, 0.0 , 0 , 2 );
+}
+
+
+/***********************************************************************************************************/
+/*                                DEFAULT CSS BELOW THIS MARK                                              */
+/***********************************************************************************************************/
 
 #green {
     -fx-background-color:
