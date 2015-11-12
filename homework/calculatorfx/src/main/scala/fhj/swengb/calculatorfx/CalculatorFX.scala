@@ -21,8 +21,8 @@ object CalculatorFX {
 
 class CalculatorFX extends javafx.application.Application {
 
-  val Fxml = "/fhj/swengb/calculatorfx/Helloworld.fxml"
-  val Css = "fhj/swengb/calculatorfx/buttonstyles.css"
+  val Fxml = "/fhj/swengb/calculatorfx/calculatorfx.fxml"
+  val Css = "fhj/swengb/calculatorfx/calculatorfx.css"
 
   val loader = new FXMLLoader(getClass.getResource(Fxml))
 
@@ -74,6 +74,9 @@ case object PLUS extends CalcOps
   */
 case object MINUS extends CalcOps
 
+
+case object SGN extends CalcOps
+
 /**
   * puts the current digits onto the numbers stack
   */
@@ -106,6 +109,8 @@ class CalculatorFXController extends Initializable {
 
   def op(op: CalcOps): Unit = {
     op match {
+      case  SGN =>
+
       case ENTER =>
         numbers = mkNumber(reverseDigits) :: numbers
       case PLUS =>
