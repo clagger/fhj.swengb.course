@@ -67,9 +67,9 @@
                                         <Button mnemonicParsing="false" onAction="#btn9" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                         <Button mnemonicParsing="false" onAction="#btn6" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                                         <Button mnemonicParsing="false" onAction="#btn3" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                        <Button mnemonicParsing="false" styleClass="grey" text="C" />
+                                        <Button mnemonicParsing="false" onAction="#clear" styleClass="grey" text="C" />
                                         <Button mnemonicParsing="false" onAction="#sgn" styleClass="grey" text="+/-" GridPane.columnIndex="1" />
-                                        <Button mnemonicParsing="false" styleClass="grey" text="\%" GridPane.columnIndex="2" />
+                                        <Button mnemonicParsing="false" onAction="#percent" styleClass="grey" text="\%" GridPane.columnIndex="2" />
                                     </children>
                                 </GridPane>
                                 <GridPane GridPane.rowIndex="1">
@@ -82,7 +82,7 @@
                                     </rowConstraints>
                                     <children>
                                         <Button mnemonicParsing="false" onAction="#btn0" text="0" />
-                                        <Button mnemonicParsing="false" styleClass="grey" text="." GridPane.columnIndex="1" />
+                                        <Button mnemonicParsing="false" onAction="#comma" styleClass="grey" text="." GridPane.columnIndex="1" />
                                     </children>
                                 </GridPane>
                             </children>
@@ -99,8 +99,8 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Button mnemonicParsing="false" styleClass="big-yellow" text="/" />
-                                <Button mnemonicParsing="false" styleClass="big-yellow" text="X" GridPane.rowIndex="1" />
+                                <Button mnemonicParsing="false" onAction="#divide" styleClass="big-yellow" text="/" />
+                                <Button mnemonicParsing="false" onAction="#multiply" styleClass="big-yellow" text="X" GridPane.rowIndex="1" />
                                 <Button mnemonicParsing="false" onAction="#minus" styleClass="big-yellow" text="-" GridPane.rowIndex="2" />
                                 <Button mnemonicParsing="false" onAction="#plus" styleClass="big-yellow" text="+" GridPane.rowIndex="3" />
                                 <Button mnemonicParsing="false" onAction="#enter" styleClass="round-red" text="E" GridPane.rowIndex="4" />
