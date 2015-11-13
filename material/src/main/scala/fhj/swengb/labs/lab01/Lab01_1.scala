@@ -1,4 +1,4 @@
-package fhj.swengb.exercises.ex01
+package fhj.swengb.labs.lab01
 
 /**
  * Created by lad on 15.10.15.

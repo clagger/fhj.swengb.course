@@ -1,4 +1,4 @@
-package fhj.swengb.exercises.ex01
+package fhj.swengb.labs.lab01
 
 import org.junit.Test
 import org.junit.Assert._

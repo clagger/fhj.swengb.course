@@ -1,11 +1,15 @@
-package fhj.swengb.lectures.l03
+package fhj.swengb.labs.lab03
 
 import java.net.URL
 import java.util.ResourceBundle
 import javafx.application.Application
-import javafx.fxml.{FXMLLoader, Initializable}
+import javafx.fxml.{FXML, FXMLLoader, Initializable}
+import javafx.scene.image.{ImageView, Image}
+import javafx.scene.layout.BorderPane
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
+
+import fhj.swengb.{Students, Speakers}
 
 import scala.util.control.NonFatal
 
@@ -44,8 +48,12 @@ class JavaFxHelloworld extends javafx.application.Application {
 
 class HelloworldController extends Initializable {
 
-  override def initialize(location: URL, resources: ResourceBundle): Unit = {
+  @FXML var borderPane : BorderPane = _
 
+  override def initialize(location: URL, resources: ResourceBundle): Unit = {
+    //val url = Speakers.rladstaetter.gitHubUser.avatarUrl.toString
+    val url = Students.mfuchs.gitHubUser.avatarUrl.toString
+    borderPane.setCenter(new ImageView(new Image(url)))
   }
 
   def clicked(): Unit = {
