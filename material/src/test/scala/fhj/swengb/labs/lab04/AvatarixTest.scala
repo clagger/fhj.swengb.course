@@ -55,7 +55,9 @@ class AvatarixTest {
 
 
   @Test def test(): Unit = {
-    val u: User = testJson.parseJson.convertTo[User]
+    val parseJson: JsValue = testJson.parseJson
+    val u: User = parseJson.convertTo[User]
     assertEquals("rladstaetter", u.login)
   }
+
 }
