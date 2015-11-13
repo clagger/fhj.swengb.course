@@ -2,6 +2,8 @@ package fhj.swengb
 
 import java.net.URL
 
+import fhj.swengb.GitHub.User
+
 /**
   * Created by lad on 24.09.15.
   */
@@ -38,11 +40,21 @@ sealed trait Person {
   }
 
   val gitHubHome: String = s"https://github.com/$githubUsername/"
-             @deprecated("remove","now")
+
+  @deprecated("remove", "now")
   val tutorialName: String = "fhj.swengb.assignments.tutorial"
   val tutorialURL: URL = new URL(gitHubHome + tutorialName)
 
   def mkHome: String = s" - $longName : [$githubUsername]($gitHubHome)"
+
+  def gitHubUser: GitHub.User = {
+    import GitHub.GithubUserProtocol._
+    import GitHub._
+    import spray.json._
+
+    val webserviceString: String = scala.io.Source.fromURL(new URL(s"https://api.github.com/users/$githubUsername")).mkString
+    webserviceString.parseJson.convertTo[User]
+  }
 
 }
 
