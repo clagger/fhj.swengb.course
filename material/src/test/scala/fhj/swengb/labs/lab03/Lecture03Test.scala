@@ -1,5 +1,6 @@
-package fhj.swengb.lectures.l03
+package fhj.swengb.labs.lab03
 
+import fhj.swengb.labs.lab03.SwengBList
 import org.junit.Assert._
 import org.junit.Test
 
