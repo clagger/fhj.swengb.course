@@ -1,7 +1,5 @@
 package fhj.swengb.labs.lab04
 
-import java.net.URL
-
 import fhj.swengb.Speakers
 
 /**
@@ -9,9 +7,6 @@ import fhj.swengb.Speakers
   */
 object Avatarix {
   def main(args: Array[String]) {
-    val result = Speakers.rladstaetter.gitHubUser.avatarUrl
-
-
-    println(result)
+    val result = Speakers.rladstaetter.gitHubUser
   }
 }

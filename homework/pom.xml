@@ -16,6 +16,7 @@
 
     <modules>
         <module>calculatorfx</module>
+        <module>avatarix</module>
     </modules>
 
 </project>
