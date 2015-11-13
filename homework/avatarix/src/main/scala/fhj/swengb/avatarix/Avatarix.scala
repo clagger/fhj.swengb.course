@@ -10,6 +10,7 @@ import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
 import fhj.swengb.Speakers
+import fhj.swengb.Students
 
 import scala.util.control.NonFatal
 
@@ -46,7 +47,7 @@ class AvatarixController extends Initializable {
   @FXML var seppl77: BorderPane = _
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-    val url: String = Speakers.rladstaetter.gitHubUser.avatarUrl.toString
+    val url: String = Students.abajric.gitHubUser.avatarUrl.toString
     //val url = Students.mfuchs.gitHubUser.avatarUrl.toString
     seppl77.setCenter(new ImageView(new Image(url)))
   }
