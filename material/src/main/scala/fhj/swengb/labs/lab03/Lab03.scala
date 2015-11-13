@@ -1,5 +1,4 @@
-package fhj.swengb.lectures.l03
-
+package fhj.swengb.labs.lab03
 
 /**
   * In the declaration trait SwengBList[+A] the '+' in front of the type

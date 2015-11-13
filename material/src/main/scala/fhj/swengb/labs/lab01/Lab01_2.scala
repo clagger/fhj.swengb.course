@@ -1,4 +1,4 @@
-package fhj.swengb.exercises.ex01
+package fhj.swengb.labs.lab01
 
 /**
   * In this exercise you should create a model for a course like swengb is one.

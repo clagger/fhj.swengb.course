@@ -1,4 +1,4 @@
-package fhj.swengb.exercises.ex02
+package fhj.swengb.labs.lab02
 
 import scala.util.Random
 
