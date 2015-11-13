@@ -43,12 +43,13 @@ class Avatarix extends javafx.application.Application {
 
 
 class AvatarixController extends Initializable {
-  @FXML var seppl77: BorderPane = _
+  @FXML var borderPane: BorderPane = _
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
     val url: String = Speakers.rladstaetter.gitHubUser.avatarUrl.toString
     //val url = Students.mfuchs.gitHubUser.avatarUrl.toString
-    seppl77.setCenter(new ImageView(new Image(url)))
+
+    borderPane.setCenter(new ImageView(new Image(url)))
   }
 
 }
