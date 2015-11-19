@@ -27,8 +27,12 @@ class CalculatorFX extends javafx.application.Application {
   val FxmlDeKilla = "/fhj/swengb/calculatorfx/calculatorfx_dekilla.fxml"
   val CssDeKilla = "fhj/swengb/calculatorfx/calculatorfx_dekilla.css"
 
-  val DefaultFxml = FxmlAbajric
-  val DefaultCss = CssAbajric
+  //val DefaultFxml = FxmlAbajric
+  //val DefaultCss = CssAbajric
+
+  val DefaultFxml = FxmlDeKilla
+  val DefaultCss = CssDeKilla
+
 
   def mkFxmlLoader(fxml: String): FXMLLoader = {
     new FXMLLoader(getClass.getResource(fxml))
