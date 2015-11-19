@@ -3,7 +3,7 @@ package fhj.swengb.assessment
 import java.io.File
 import java.net.URL
 
-import fhj.swengb.{Student, Students, SwengbUtil}
+import fhj.swengb.{Student, SwengbUtil}
 
 import scala.io.Source
 import scala.util.Try
@@ -58,20 +58,17 @@ case class Assessment(name: String, student: Student) {
   lazy val gitHubRepoExists: Boolean =
     fetchFromInternet(assignmentUrl).map(s => s.contains(assessmentName)).getOrElse(false)
 
-  def fetchContent(): Try[(String, String)] = {
-    for {
-      implSrc <- fetchFromInternet(assignmentClazzURL)
-      testSrc <- fetchFromInternet(assignmentTestClazzURL)
-    } yield (implSrc, testSrc)
-  }
+  lazy val remoteAssignment: Try[String] = fetchFromInternet(assignmentClazzURL)
 
-  val (srcExists, testExists) = testContent.getOrElse((false, false))
+  lazy val remoteAssignmentTest: Try[String] = fetchFromInternet(assignmentTestClazzURL)
+
+  lazy val (srcExists, testExists) = testContent.getOrElse((false, false))
 
 
   def testContent: Try[(Boolean, Boolean)] = {
-    fetchContent().map {
-      case (a, b) => (a.contains("package"), b.contains("package"))
-    }
+    for {a <- remoteAssignment
+         at <- remoteAssignmentTest} yield
+      (a.contains("package"), at.contains("package"))
   }
 
   /**
@@ -79,19 +76,17 @@ case class Assessment(name: String, student: Student) {
     */
   def generateSources(): Unit = {
 
-    val targetImpl = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
-    val targetTest = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}AssignmentTest.scala")
-    val referenceTest = new File(s"$assessmentName/src/test/scala/fhj/swengb/assignments/$name/rladstaetter/${Name}AssignmentTest.scala")
+    val assignmentFile = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
+    val assignmentTestFile = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}AssignmentTest.scala")
+    val referenceTestFile = new File(s"$assessmentName/src/test/scala/fhj/swengb/assignments/$name/rladstaetter/${Name}AssignmentTest.scala")
+    val referenceTestImplString: String = Source.fromFile(referenceTestFile).mkString.replaceAll("rladstaetter", student.userId)
 
-    SwengbUtil.mkParent(targetImpl)
-    SwengbUtil.mkParent(targetTest)
+    SwengbUtil.mkParent(assignmentFile)
+    SwengbUtil.mkParent(assignmentTestFile)
 
-    for ((implSrc, testSrc) <- fetchContent()) {
-      SwengbUtil.writeToFile(targetImpl, implSrc)
-
-      val content = Source.fromFile(referenceTest).mkString
-      SwengbUtil.writeToFile(targetTest, content.replaceAll("rladstaetter", student.userId))
-
+    for (implSrc <- remoteAssignment) {
+      SwengbUtil.writeToFile(assignmentFile, implSrc)
+      SwengbUtil.writeToFile(assignmentTestFile, referenceTestImplString)
       //SwengbUtil.writeToFile(targetTest, testSrc)
     }
 
