@@ -71,6 +71,7 @@ case class Assessment(name: String, student: Student) {
       (a.contains("package"), at.contains("package"))
   }
 
+
   /**
     * This method call fetches the source code of the student to the workspace.
     */
@@ -79,7 +80,7 @@ case class Assessment(name: String, student: Student) {
     val assignmentFile = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
     val assignmentTestFile = new File(s"fhj.swengb.lecturer/students/src/test/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}AssignmentTest.scala")
     val referenceTestFile = new File(s"$assessmentName/src/test/scala/fhj/swengb/assignments/$name/rladstaetter/${Name}AssignmentTest.scala")
-    val referenceTestImplString: String = Source.fromFile(referenceTestFile).mkString.replaceAll("rladstaetter", student.userId)
+    val referenceTestImplString: String = prepare(referenceTestFile)
 
     SwengbUtil.mkParent(assignmentFile)
     SwengbUtil.mkParent(assignmentTestFile)
@@ -89,6 +90,32 @@ case class Assessment(name: String, student: Student) {
       SwengbUtil.writeToFile(assignmentTestFile, referenceTestImplString)
       //SwengbUtil.writeToFile(targetTest, testSrc)
     }
+
+  }
+
+  def prepare(origFile: File): String = {
+    replacePackageName(Source.fromFile(origFile).mkString)
+  }
+
+  def replacePackageName(origString: String): String = {
+    origString.replaceAll("rladstaetter", student.userId)
+  }
+
+  def generateSources4Tree(): Unit = {
+    generateSources()
+
+    val packageFile = new File(s"fhj.swengb.assignments.tree/src/main/scala/fhj/swengb/assignments/tree/rladstaetter/package.scala")
+    val pt2DFile = new File(s"fhj.swengb.assignments.tree/src/main/scala/fhj/swengb/assignments/tree/rladstaetter/Pt2D.scala")
+    val packageTargetFile = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/package.scala")
+    val pt2DTargetFile = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/Pt2D.scala")
+
+    val assignmentFile = new File(s"fhj.swengb.lecturer/students/src/main/scala/fhj/swengb/assignments/$name/${student.userId}/${Name}Assignment.scala")
+
+    if (assignmentFile.exists) {
+      SwengbUtil.writeToFile(packageTargetFile, prepare(packageFile))
+      SwengbUtil.writeToFile(pt2DTargetFile, prepare(pt2DFile))
+    }
+
 
   }
 
