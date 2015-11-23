@@ -37,8 +37,15 @@ Needs to know the fields which get parsed:
 Responsible Person: Stefan Leitner, Daniel Kandlhofer, Georg Meizenitsch
 
 Webservice Path:    https://api.github.com/users/$githubUsername
-
-
+Selected Parameters to parse:
+  "login": "knalla66",
+  "avatar_url": "https://avatars.githubusercontent.com/u/15108257?v=3",
+  "html_url": "https://github.com/knalla66",
+  "followers_url": "https://api.github.com/users/knalla66/followers",
+  "following_url": "https://api.github.com/users/knalla66/following{/other_user}",
+  "followers": 0,
+  "following": 1,
+  "public_repos": 4,
 
 
 ## Tests ##
