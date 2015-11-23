@@ -10,28 +10,39 @@ the parsed information will be provided in the GUI, which is made via the Sceneb
 
 The Group Members for this project:
 
-GUI-Design:         Amar Bajric, Verena Skerbinz
-Parser:             Stefan Leitner, Daniel Kandlhofer
-List with Names:    Georg Meizenitsch, Christian Lagger
+GUI-Design:         Amar Bajric, Verena Skerbinz, Christian Lagger
+Parser & List:      Stefan Leitner, Daniel Kandlhofer, Georg Meizenitsch
 Tests:              Steven Hysi, Wolfgang Steinkellner, Granit Hoxha
 Documentation:      Markus Knaller
 Presentation:       ?
 
-***Note***
-Julia Johansson and Elke Keck got removed from the group "GUI-Design"
+*** Change Notes ***
+1)  Julia Johansson and Elke Keck got removed from the group "GUI-Design"
+2)  The Point "List" got merged with "Parser"
+3)  The responsible persons got divided
+            Christian Lagger to "GUI Design"
+            Georg Meizenitsch to "Parser"
 
 
 
 ## GUI-DESIGN ##
+Responsible Person: Amar Bajric, Verena Skerbinz, Christian Lagger
+
+Needs to know the fields which get parsed:
+
+
 
 
 ## PARSER ##
+Responsible Person: Stefan Leitner, Daniel Kandlhofer, Georg Meizenitsch
+
+Webservice Path:    https://api.github.com/users/$githubUsername
 
 
-## List with Names ##
 
 
 ## Tests ##
+Responsible Person: Steven Hysi, Wolfgang Steinkellner, Granit Hoxha
 
 
 
