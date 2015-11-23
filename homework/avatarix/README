@@ -1,0 +1,45 @@
+# AVATARIX
+
+This application is a GUI which shows the whole group members of the IMA14.
+The GUI shows all group members with their profile picture from GitHub.
+"On Click" the profile picture and the GUI provides additional information about the person.
+
+The Main Program makes a request to the WebService and parse the information via Json into the main program back.
+the parsed information will be provided in the GUI, which is made via the Scenebuilder.
+
+
+The Group Members for this project:
+
+GUI-Design:         Amar Bajric, Verena Skerbinz
+Parser:             Stefan Leitner, Daniel Kandlhofer
+List with Names:    Georg Meizenitsch, Christian Lagger
+Tests:              Steven Hysi, Wolfgang Steinkellner, Granit Hoxha
+Documentation:      Markus Knaller
+Presentation:       ?
+
+***Note***
+Julia Johansson and Elke Keck got removed from the group "GUI-Design"
+
+
+
+## GUI-DESIGN ##
+
+
+## PARSER ##
+
+
+## List with Names ##
+
+
+## Tests ##
+
+
+
+
+
+
+
+
+
+
+
