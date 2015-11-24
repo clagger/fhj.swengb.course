@@ -9,13 +9,63 @@ import javafx.scene.layout.BorderPane
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
-import fhj.swengb.Speakers
+
+import fhj.swengb.{Student, Speakers, Students}
 
 import scala.util.control.NonFatal
+import scala.collection.mutable.Map
 
 object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
+
+    /*
+    gibt uns eine Map von Studenten mit den Parametern: Key = UserID, Value = List(Firstname,Secondname, Githubusername, AvatarUrl)
+    zur Auflistung aller Students als Overview
+     */
+    def getData(students:List[Student]):Map[String,List[String]] = {
+      val data = Map[String,List[String]]()
+      for(value <- students) {
+        data += value.userId -> List(value.firstName,
+          value.secondName,
+          value.githubUsername,
+          value.gitHubUser.avatarUrl.toString
+          )
+      }
+      data
+    }
+
+
+    /*
+    gibt Detaildaten von ausgewählten Students in einer Liste zurück
+    für Detailansicht
+     */
+    def getStudentData(students:List[Student],x:String):List[String] = {
+      val res = Nil
+      for(value <- students if(value.githubUsername == x)) {
+          res ++ List(value.gitHubUser.html.toString,
+            value.gitHubUser.fing.toString,
+            value.gitHubUser.fing_url.toString,
+            value.gitHubUser.foll.toString,
+            value.gitHubUser.foll_url.toString,
+            value.gitHubUser.create.toString)
+      }
+      res
+    }
+
+
+    /*
+    Aufteilung der Studenten in Gruppen
+     */
+    val students1 = getData(Students.studentGroup1.toList)
+    val students2 = getData(Students.studentGroup1.toList)
+    val students3 = getData(Students.studentGroup1.toList)
+
+    println(students1)
+    println(students2)
+    println(students3)
+
+
   }
 }
 
@@ -46,9 +96,9 @@ class AvatarixController extends Initializable {
   @FXML var seppl77: BorderPane = _
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-    val url: String = Speakers.rladstaetter.gitHubUser.avatarUrl.toString
-    //val url = Students.mfuchs.gitHubUser.avatarUrl.toString
-    seppl77.setCenter(new ImageView(new Image(url)))
+    //val url: String = Speakers.rladstaetter.gitHubUser.avatarUrl.toString
+    //val url = Students.sleitner.gitHubUser.avatarUrl.toString
+    //seppl77.setCenter(new ImageView(new Image(url)))
   }
 
 }
