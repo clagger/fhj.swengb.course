@@ -23,11 +23,13 @@ object Avatarix {
     println("HTML_Url: " + x.html.toString)
     println("Followers: " + x.foll)
     println("Following: " + x.fing)
+    println("created at: " + x.create)
 
     val login = x.login
     val foll = x.foll
     val fing = x.fing
-    val dictionary = Map(login -> List(foll,fing))
+    val create = x.create
+    val dictionary = Map(login -> List(foll,fing,create))
 
     println(dictionary)
   }

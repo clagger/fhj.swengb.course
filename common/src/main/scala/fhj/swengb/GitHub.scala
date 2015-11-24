@@ -10,7 +10,7 @@ import spray.json._
   */
 object GitHub {
 
-  case class User(login: String, avatarUrl: URL, html: URL, foll: BigDecimal, fing: BigDecimal)
+  case class User(login: String, avatarUrl: URL, html: URL, foll: BigDecimal, fing: BigDecimal, create: String)
 
   object GithubUserProtocol extends DefaultJsonProtocol {
 
@@ -21,7 +21,8 @@ object GitHub {
           JsString(user.avatarUrl.toString),
           JsString(user.html.toString),
           JsNumber(user.foll),
-          JsNumber(user.fing)
+          JsNumber(user.fing),
+          JsString(user.create)
         )
 
 
@@ -33,7 +34,8 @@ object GitHub {
             val JsString(html) = m("html_url")
             val JsNumber(foll) = m("followers")
             val JsNumber(fing) = m("following")
-            User(login, new URL(a_url), new URL(html), foll, fing)
+            val JsString(create) = m("created_at")
+            User(login, new URL(a_url), new URL(html), foll, fing, create)
           case x =>
             deserializationError("GitHubUser expected.")
         }
