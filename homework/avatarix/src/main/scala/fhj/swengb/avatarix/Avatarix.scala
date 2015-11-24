@@ -17,7 +17,7 @@ object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
 
-    val x = Students.dkandlhofer.gitHubUser
+   /* val x = Students.dkandlhofer.gitHubUser
     println("Login: " + x.login)
     println("Avatar_Url: " + x.avatarUrl.toString)
     println("HTML_Url: " + x.html.toString)
@@ -30,9 +30,8 @@ object Avatarix {
     val login = x.login
     val foll = x.foll
     val fing = x.fing
-    val create = x.create
-    val dictionary = Map(login -> List(foll,fing,create))
-
+    val create = x.create*/
+    val dictionary = Map("test" -> List(20,89),"hallo" -> List(2,3))
     println(dictionary)
   }
 }
@@ -58,6 +57,7 @@ class Avatarix extends javafx.application.Application {
     }
 
 }
+
 
 
 class AvatarixController extends Initializable {
