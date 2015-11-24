@@ -22,11 +22,13 @@ object Avatarix {
 
 class Avatarix extends javafx.application.Application {
 
-
-  val Fxml = "/fhj/swengb/avatarix/Avatarix.fxml"
+  //alte fxml datei (vom ladstaetter)
+  val FxmlALT = "/fhj/swengb/avatarix/Avatarix.fxml"
+  //neue Fxml von (amar) Beta...
+  val FxmlNEU = "/fhj/swengb/avatarix/Avatarix_Amar_Beta.fxml"
   val Css = "fhj/swengb/avatarix/Avatarix.css"
 
-  val loader = new FXMLLoader(getClass.getResource(Fxml))
+  val loader = new FXMLLoader(getClass.getResource(FxmlALT))
 
   override def start(stage: Stage): Unit =
     try {
