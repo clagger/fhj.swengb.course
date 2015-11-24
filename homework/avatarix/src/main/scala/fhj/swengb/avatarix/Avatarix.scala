@@ -23,6 +23,8 @@ object Avatarix {
     println("HTML_Url: " + x.html.toString)
     println("Followers: " + x.foll)
     println("Following: " + x.fing)
+    println("Followers URL: " + x.foll_url)
+    println("Following URL: " + x.fing_url)
     println("created at: " + x.create)
 
     val login = x.login
