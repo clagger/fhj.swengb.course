@@ -57,14 +57,26 @@ object Avatarix {
     /*
     Aufteilung der Studenten in Gruppen
      */
-    val students1 = getData(Students.studentGroup1.toList)
-    val students2 = getData(Students.studentGroup1.toList)
-    val students3 = getData(Students.studentGroup1.toList)
+    //val students1 = getData(Students.studentGroup1.toList)
+    val students2 = getData(Students.studentGroup2.toList)
+    val students3 = getData(Students.studentGroup3.toList)
 
-    println(students1)
+    val test1 = Map("fgraf" -> List("Felix", "Graf", "Graf-Carello", """https://avatars.githubusercontent.com/u/15038288?v=3"""),
+      "ekarimova" -> List("Elza", "Karimova", "elsakarimova", """https://avatars.githubusercontent.com/u/15157578?v=3"""),
+      "pkoerner" -> List("Paul", "Körner", "McKorleone", """https://avatars.githubusercontent.com/u/14877839?v=3"""),
+      "thasenbichler" -> List("Timo", "Hasenbichler", "timoooo", """https://avatars.githubusercontent.com/u/15030831?v=3"""),
+      "mfuchs" -> List("Michael", "Fuchs", "deKilla", """https://avatars.githubusercontent.com/u/4746687?v=3"""),
+      "aschneider" -> List("Andreas", "Schneider", "Zerberuss", """https://avatars.githubusercontent.com/u/15108282?v=3"""),
+      "jblazevic" -> List("Josip", "Blazevic", "jbtastic", """https://avatars.githubusercontent.com/u/15108227?v=3"""),
+      "alichtenegger" -> List("Alexander", "Lichtenegger", "AlexanderLichtenegger", """https://avatars.githubusercontent.com/u/15108218?v=3"""),
+      "cfuerbahs" -> List("Christoph", "Fürbahs", "furchr", """https://avatars.githubusercontent.com/u/12102333?v=3"""),
+      "cherzog" -> List("Carina", "Herzog", "carinaher", """https://avatars.githubusercontent.com/u/15108186?v=3"""))
+    //val test2 = Map()
+
+    //println(students1)
     println(students2)
     println(students3)
-
+    println(test1)
 
   }
 }
