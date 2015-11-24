@@ -19,6 +19,7 @@ object Avatarix {
   }
 }
 
+
 class Avatarix extends javafx.application.Application {
 
 
