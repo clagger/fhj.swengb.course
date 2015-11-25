@@ -5,10 +5,9 @@ import java.util.ResourceBundle
 import javafx.application.Application
 import javafx.fxml.{FXML, FXMLLoader, Initializable}
 import javafx.scene.image.{Image, ImageView}
-import javafx.scene.layout.BorderPane
+import javafx.scene.layout.{HBox, GridPane, BorderPane, AnchorPane}
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
-
 
 import fhj.swengb.{Student, Speakers, Students}
 
@@ -63,9 +62,20 @@ class AvatarixController extends Initializable {
     val url2: String = "https://avatars3.githubusercontent.com/u/15001225?v=3&s=460"
     grid_pane.setHgap(10);
     grid_pane.setVgap(10);
-    grid_pane.getChildren().add(new HBox(new ImageView(new Image(url))))
-    grid_pane.getChildren().add(new HBox(new ImageView(new Image(url2))))
+    //grid_pane.getChildren().add(new HBox((new ImageView(new Image(url)))))
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
