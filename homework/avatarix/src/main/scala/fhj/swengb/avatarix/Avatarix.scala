@@ -54,6 +54,7 @@ class AvatarixController extends Initializable {
   @FXML var main_pane : AnchorPane = _
   @FXML var grid_pane : GridPane = _
   @FXML var gitHubUser : Text = _
+  @FXML var githublink : Text = _
   @FXML var vorname : Text = _
   @FXML var nachname : Text = _
   @FXML var follower : Text = _
@@ -75,7 +76,7 @@ class AvatarixController extends Initializable {
       iv.setFitWidth(120)
 
       iv.setId(i._2(2))
-     iv.setUserData(i._2)
+     //iv.setUserData(i._2)
 
       grid_pane.add(iv, gridColumn, gridRow)
 
@@ -95,13 +96,17 @@ class AvatarixController extends Initializable {
   val mouseEventHandler: EventHandler[_ >: MouseEvent] = new EventHandler[MouseEvent] {
     override def handle(event: MouseEvent): Unit = {
       event.getSource match {
-        case a: ImageView =>
-        val studenlist = Students.studentGroup1.toList
-        val detailedData:List[String] = ParserFunctions.getStudentData(studenlist, a.getId)
+        case a: ImageView => {
+          val studenlist = Students.studentGroup1.toList
+          val data:List[String] = ParserFunctions.getStudentData(studenlist, a.getId)
 
-        val data:Any = a.getUserData()
-        gitHubUser.setText(a.getId())
 
+          gitHubUser.setText(a.getId())
+          //vorname.setText(data(0))
+          //nachname.setText(data(0))
+          //follower.setText(data(0))
+          //following.setText(data(0))
+        }
 
 
         case _ => assert(false)
