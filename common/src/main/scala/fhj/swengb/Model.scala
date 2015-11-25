@@ -4,11 +4,7 @@ import java.io.InputStream
 import java.time.LocalDate
 
 
-object Projects {
 
-  case class Project(name: String, description: String, team: Seq[Student])
-
-}
 
 object Events {
 
