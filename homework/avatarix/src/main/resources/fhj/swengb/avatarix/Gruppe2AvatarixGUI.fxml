@@ -7,7 +7,7 @@
 
 <BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fhj.swengb.avatarix.AvatarixController">
     <top>
-        <Label prefHeight="31.0" prefWidth="106.0" text="Avatarix" BorderPane.alignment="CENTER">
+        <Label prefHeight="31.0" prefWidth="106.0" text="Avatarix" BorderPane.alignment="CENTER" id="iphone-Text">
             <font>
                 <Font size="29.0" />
             </font>
@@ -19,7 +19,7 @@
    <center>
       <SplitPane dividerPositions="0.7212276214833759" prefHeight="394.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane fx:id="main_pane" prefHeight="355.0" prefWidth="477.0">
+          <AnchorPane id="windows7" fx:id="main_pane" prefHeight="355.0" prefWidth="477.0">
                <children>
                   <GridPane fx:id="grid_pane" layoutX="219.0" layoutY="142.0" prefHeight="492.0" prefWidth="562.0" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>
@@ -35,7 +35,7 @@
                     </rowConstraints>
                   </GridPane>
                </children></AnchorPane>
-          <AnchorPane fx:id="splitted_pane">
+          <AnchorPane fx:id="splitted_pane" id="gray">
                <children>
                   <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GitHubUser:" />
                   <Text fx:id="gitHubUser" id="gitHubUser" layoutX="92.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="83.13671875" />
