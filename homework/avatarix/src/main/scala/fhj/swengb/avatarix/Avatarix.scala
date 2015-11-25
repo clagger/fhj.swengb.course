@@ -71,11 +71,15 @@ class AvatarixController extends Initializable {
     var gridColumn = 0
     for (i <- ParserFunctions.test1) {
       grid_pane.add(new HBox(new ImageView(new Image(i._2(3)))),gridColumn,gridRow)
-      gridColumn = gridColumn + 1
-      if (gridColumn >= 3){
+
+      //checks if last column of row is reached...if yes then reset counter else only increment gridColumn
+      if (gridColumn == 3) {
         gridRow = gridRow + 1
         gridColumn = 0
       }
+      else gridColumn = gridColumn + 1
+
+
     }
 
   }
