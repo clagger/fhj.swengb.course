@@ -1,42 +1,35 @@
 package fhj.swengb.avatarix
 
-import java.awt.event.MouseEvent
-import java.beans.EventHandler
+
+import javafx.scene.input.MouseEvent
+import javafx.event.EventHandler
 import java.net.URL
 import java.util.ResourceBundle
 import javafx.application.Application
 import javafx.fxml.{FXML, FXMLLoader, Initializable}
 import javafx.scene.image.{Image, ImageView}
 import javafx.scene.layout.{AnchorPane, GridPane, HBox, BorderPane}
+import javafx.scene.text.Text
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
-import fhj.swengb.{Student, Speakers, Students}
+import fhj.swengb.{Students, Speakers}
 
 import scala.util.control.NonFatal
-import scala.collection.mutable.Map
 
 object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
-
-    /*
-    wie man zugreifen kann:
-
-  ParserFunctions.getStudentData()
-  */
   }
 }
 
 class Avatarix extends javafx.application.Application {
 
-  //alte fxml datei (vom ladstaetter)
-  val FxmlALT = "/fhj/swengb/avatarix/Avatarix.fxml"
-  //neue Fxml von (amar) Beta...
-  val FxmlNEU = "/fhj/swengb/avatarix/Avatarix_Amar_Beta.fxml"
+
+  val Fxml = "/fhj/swengb/avatarix/lagger_testgui.fxml"
   val Css = "fhj/swengb/avatarix/Avatarix.css"
 
-  val loader = new FXMLLoader(getClass.getResource(FxmlNEU))
+  val loader = new FXMLLoader(getClass.getResource(Fxml))
 
   override def start(stage: Stage): Unit =
     try {
@@ -55,32 +48,60 @@ class Avatarix extends javafx.application.Application {
 
 class AvatarixController extends Initializable {
   @FXML var border_pane: BorderPane = _
-  @FXML var main_pane: AnchorPane = _
-  @FXML var grid_pane: GridPane = _
-
+  @FXML var main_pane : AnchorPane = _
+  @FXML var grid_pane : GridPane = _
+  @FXML var gitHubUser : Text = _
+  @FXML var vorname : Text = _
+  @FXML var nachname : Text = _
+  @FXML var follower : Text = _
+  @FXML var following : Text = _
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-
+    //val url: String = "https://avatars0.githubusercontent.com/u/119250?v=3&s=400"
+    //val url2: String = "https://avatars3.githubusercontent.com/u/15001225?v=3&s=460"
+    grid_pane.setHgap(10);
+    grid_pane.setVgap(10);
+    //grid_pane.getChildren().add(new HBox((new ImageView(new Image(url)))))
+    //override def iterate()
     var gridRow = 0
     var gridColumn = 0
-
     for (i <- ParserFunctions.test1) {
-      val image: ImageView = new ImageView()
-      image.setImage(new Image(i._2(3)))
-      image.setFitHeight(120)
-      image.setFitWidth(120)
-      grid_pane.add(image, gridColumn, gridRow)
+      val iv:ImageView = new ImageView()
+      iv.setImage(new Image(i._2(3)))
+      iv.setFitHeight(120)
+      iv.setFitWidth(120)
 
+      iv.setId(i._2(2))
+     iv.setUserData(i._2)
+
+      grid_pane.add(iv, gridColumn, gridRow)
+
+      iv.setOnMouseClicked(mouseEventHandler)
+
+      gridColumn += 1
       if (gridColumn >= 3) {
         gridRow += 1
         gridColumn = 0
       }
-      else gridColumn += 1
     }
-
   }
 
+  val mouseEventHandler: EventHandler[_ >: MouseEvent] = new EventHandler[MouseEvent] {
+    override def handle(event: MouseEvent): Unit = {
+      event.getSource match {
+        case a: ImageView =>
+        val studenlist = Students.studentGroup1.toList
+        val detailedData:List[String] = ParserFunctions.getStudentData(studenlist, a.getId)
 
+        val data:Any = a.getUserData()
+        gitHubUser.setText(a.getId())
+
+
+
+        case _ => assert(false)
+      }
+    }
+  }
 
 
 }

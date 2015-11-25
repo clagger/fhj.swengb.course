@@ -41,6 +41,7 @@ object ParserFunctions {
     }
     res
   }
+
   val valuetest = "deKilla"
   val studenlist = Students.studentGroup1.toList
   //val students1 = getData(Students.studentGroup1.toList)
