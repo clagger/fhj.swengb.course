@@ -2,6 +2,7 @@ package fhj.swengb
 
 import java.net.URL
 
+import spray.json
 import spray.json._
 
 /**

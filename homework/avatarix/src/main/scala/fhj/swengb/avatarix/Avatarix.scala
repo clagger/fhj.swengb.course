@@ -17,7 +17,7 @@ import scala.collection.mutable.Map
 
 object Avatarix {
   def main(args: Array[String]) {
-    //Application.launch(classOf[Avatarix], args: _*)
+    Application.launch(classOf[Avatarix], args: _*)
 
     /*
     gibt uns eine Map von Studenten mit den Parametern: Key = UserID, Value = List(Firstname,Secondname, Githubusername, AvatarUrl)
@@ -30,7 +30,7 @@ object Avatarix {
           value.secondName,
           value.githubUsername,
           value.gitHubUser.avatarUrl.toString
-          )
+        )
       }
       data
     }
@@ -43,12 +43,12 @@ object Avatarix {
     def getStudentData(students:List[Student],x:String):List[String] = {
       val res = Nil
       for(value <- students if(value.githubUsername == x)) {
-          res ++ List(value.gitHubUser.html.toString,
-            value.gitHubUser.fing.toString,
-            value.gitHubUser.fing_url.toString,
-            value.gitHubUser.foll.toString,
-            value.gitHubUser.foll_url.toString,
-            value.gitHubUser.create.toString)
+        res ++ List(value.gitHubUser.html.toString,
+          value.gitHubUser.fing.toString,
+          value.gitHubUser.fing_url.toString,
+          value.gitHubUser.foll.toString,
+          value.gitHubUser.foll_url.toString,
+          value.gitHubUser.create.toString)
       }
       res
     }
