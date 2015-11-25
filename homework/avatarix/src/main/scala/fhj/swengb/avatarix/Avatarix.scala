@@ -58,11 +58,25 @@ class AvatarixController extends Initializable {
 
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-    val url: String = "https://avatars0.githubusercontent.com/u/119250?v=3&s=400"
-    val url2: String = "https://avatars3.githubusercontent.com/u/15001225?v=3&s=460"
+    //val url: String = "https://avatars0.githubusercontent.com/u/119250?v=3&s=400"
+    //val url2: String = "https://avatars3.githubusercontent.com/u/15001225?v=3&s=460"
     grid_pane.setHgap(10);
     grid_pane.setVgap(10);
     //grid_pane.getChildren().add(new HBox((new ImageView(new Image(url)))))
+
+
+
+    //override def iterate()
+    var gridRow = 0
+    var gridColumn = 0
+    for (i <- ParserFunctions.test1) {
+      grid_pane.add(new HBox(new ImageView(new Image(i._2(3)))),gridColumn,gridRow)
+      gridColumn = gridColumn + 1
+      if (gridColumn >= 3){
+        gridRow = gridRow + 1
+        gridColumn = 0
+      }
+    }
 
   }
 
