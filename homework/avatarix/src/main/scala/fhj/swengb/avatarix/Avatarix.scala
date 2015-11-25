@@ -84,7 +84,7 @@ object Avatarix {
 class Avatarix extends javafx.application.Application {
 
 
-  val Fxml = "/fhj/swengb/avatarix/Avatarix.fxml"
+  val Fxml = "/fhj/swengb/avatarix/Avatarix_Amar_Beta.fxml"
   val Css = "fhj/swengb/avatarix/Avatarix.css"
 
   val loader = new FXMLLoader(getClass.getResource(Fxml))
@@ -105,12 +105,12 @@ class Avatarix extends javafx.application.Application {
 
 
 class AvatarixController extends Initializable {
-  @FXML var seppl77: BorderPane = _
+  @FXML var border_pane: BorderPane = _
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
     //val url: String = Speakers.rladstaetter.gitHubUser.avatarUrl.toString
-    //val url = Students.sleitner.gitHubUser.avatarUrl.toString
-    //seppl77.setCenter(new ImageView(new Image(url)))
+    val url = Students.sleitner.gitHubUser.avatarUrl.toString
+    border_pane.setCenter(new ImageView(new Image(url)))
   }
 
 }
