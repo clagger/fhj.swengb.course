@@ -9,6 +9,7 @@ package fhj.swengb.labs.lab03
   * always assuming that a Dog is a subtype of Animal.
   *
   * @tparam A
+  *
   */
 sealed trait SwengBList[+A]
 
