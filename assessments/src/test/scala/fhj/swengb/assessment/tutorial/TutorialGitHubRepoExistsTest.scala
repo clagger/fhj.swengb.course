@@ -63,7 +63,7 @@ class TutorialGitHubRepoExistsTest {
 
   @Test def fschopper(): Unit = assert(Assessment("tutorial", Students.fschopper).gitHubRepoExists)
 
-  @Test def aseebacher(): Unit = assert(Assessment("tutorial", Students.aseebacher).gitHubRepoExists)
+  @Test def aseebacher() = assert(Assessment("tutorial", Students.aseebacher).gitHubRepoExists)
 
   @Test def vskerbinz(): Unit = assert(Assessment("tutorial", Students.vskerbinz).gitHubRepoExists)
 

@@ -5,7 +5,7 @@ import java.util.ResourceBundle
 import javafx.application.Application
 import javafx.fxml.{FXML, FXMLLoader, Initializable}
 import javafx.scene.image.{Image, ImageView}
-import javafx.scene.layout.{HBox, GridPane, BorderPane, AnchorPane}
+import javafx.scene.layout.{AnchorPane, GridPane, HBox, BorderPane}
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
@@ -70,16 +70,17 @@ class AvatarixController extends Initializable {
     var gridRow = 0
     var gridColumn = 0
     for (i <- ParserFunctions.test1) {
-      grid_pane.add(new HBox(new ImageView(new Image(i._2(3)))),gridColumn,gridRow)
+      val iv:ImageView = new ImageView()
+      iv.setImage(new Image(i._2(3)))
+      iv.setFitHeight(120)
+      iv.setFitWidth(120)
 
-      //checks if last column of row is reached...if yes then reset counter else only increment gridColumn
-      if (gridColumn == 3) {
-        gridRow = gridRow + 1
+      grid_pane.add(iv, gridColumn, gridRow)
+      gridColumn += 1
+      if (gridColumn >= 3) {
+        gridRow += 1
         gridColumn = 0
       }
-      else gridColumn = gridColumn + 1
-
-
     }
 
   }
