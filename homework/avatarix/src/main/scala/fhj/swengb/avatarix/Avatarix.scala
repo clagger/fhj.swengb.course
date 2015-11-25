@@ -9,7 +9,7 @@ import javafx.scene.layout.BorderPane
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
 
-import fhj.swengb.{Students, Speakers}
+import fhj.swengb.{Student, Students, Speakers}
 
 import scala.util.control.NonFatal
 
@@ -30,9 +30,13 @@ object Avatarix {
     val login = x.login
     val foll = x.foll
     val fing = x.fing
-    val create = x.create*/
+    val create = x.create
     val dictionary = Map("test" -> List(20,89),"hallo" -> List(2,3))
-    println(dictionary)
+    println(dictionary)*/
+
+    val stud:List[Student] = Students.studentGroup2.toList
+
+    for(value <- stud) println(Map(value.userId -> List(value.firstName,value.secondName)))
   }
 }
 
