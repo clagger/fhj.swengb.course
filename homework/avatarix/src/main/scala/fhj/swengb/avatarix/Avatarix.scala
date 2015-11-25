@@ -1,6 +1,7 @@
 package fhj.swengb.avatarix
 
 
+import javafx.geometry.Insets
 import javafx.scene.effect.DropShadow
 import javafx.scene.input.MouseEvent
 import javafx.event.EventHandler
@@ -63,12 +64,10 @@ class AvatarixController extends Initializable {
 
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-    grid_pane.setHgap(10);
-    grid_pane.setVgap(10);
+    grid_pane.setPadding(new Insets(-25,-20,-25,-20))
     pictureLoader()
-
-
   }
+
 
   val effect: EventHandler[_ >: MouseEvent] = new EventHandler[MouseEvent] {
     override def handle(event: MouseEvent): Unit = {
@@ -107,6 +106,7 @@ class AvatarixController extends Initializable {
       for (i <- ParserFunctions.test1) {
         val iv: ImageView = new ImageView()
         iv.setImage(new Image(i._2(3)))
+        //sets the size of every ImageView
         iv.setFitHeight(120)
         iv.setFitWidth(120)
 
@@ -124,6 +124,7 @@ class AvatarixController extends Initializable {
 
         //for every image --> call the mouseEventHandler
         iv.setOnMouseClicked(mouseEventHandler)
+        //for every image --> call and set effects while hoovering and exiting
         iv.setOnMouseEntered(effect)
         iv.setOnMouseExited(effect)
       }
