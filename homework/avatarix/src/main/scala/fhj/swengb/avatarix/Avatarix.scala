@@ -17,7 +17,7 @@ import scala.collection.mutable.Map
 
 object Avatarix {
   def main(args: Array[String]) {
-    Application.launch(classOf[Avatarix], args: _*)
+    //Application.launch(classOf[Avatarix], args: _*)
 
     /*
     gibt uns eine Map von Studenten mit den Parametern: Key = UserID, Value = List(Firstname,Secondname, Githubusername, AvatarUrl)
@@ -52,14 +52,17 @@ object Avatarix {
       }
       res
     }
+    val valuetest = "deKilla"
+    val studenlist = Students.studentGroup1.toList
+    val students1 = getData(Students.studentGroup1.toList)
 
-
+    println(getStudentData(studenlist,valuetest))
     /*
     Aufteilung der Studenten in Gruppen
      */
-    //val students1 = getData(Students.studentGroup1.toList)
-    val students2 = getData(Students.studentGroup2.toList)
-    val students3 = getData(Students.studentGroup3.toList)
+
+    //val students2 = getData(Students.studentGroup2.toList)
+    //val students3 = getData(Students.studentGroup3.toList)
 
     val test1 = Map("fgraf" -> List("Felix", "Graf", "Graf-Carello", """https://avatars.githubusercontent.com/u/15038288?v=3"""),
       "ekarimova" -> List("Elza", "Karimova", "elsakarimova", """https://avatars.githubusercontent.com/u/15157578?v=3"""),
@@ -74,9 +77,9 @@ object Avatarix {
     //val test2 = Map()
 
     //println(students1)
-    println(students2)
-    println(students3)
-    println(test1)
+    //println(students2)
+    //println(students3)
+    //println(test1)
 
   }
 }
@@ -105,13 +108,13 @@ class Avatarix extends javafx.application.Application {
 
 
 class AvatarixController extends Initializable {
-  @FXML var borderPane: BorderPane = _
+  @FXML var border_pane: BorderPane = _
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-    val url: String = Students.dkandlhofer.gitHubUser.avatarUrl.toString
+    //val url: String = Students.dkandlhofer.gitHubUser.avatarUrl.toString
     //val url = Students.mfuchs.gitHubUser.avatarUrl.toString
 
-    borderPane.setCenter(new ImageView(new Image(url)))
+    //border_pane.setCenter(new ImageView(new Image(url)))
   }
 
 }
