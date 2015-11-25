@@ -49,3 +49,5 @@
 - [FP 101](https://www.edx.org/course/introduction-functional-programming-delftx-fp101x-0)
 - [https://en.wikipedia.org/wiki/PechaKucha](https://en.wikipedia.org/wiki/PechaKucha) a presentation format which keeps presentations concise and fast-paced.
 - Emailverteiler: stima14@fh-joanneum.at
+
+# yolo
