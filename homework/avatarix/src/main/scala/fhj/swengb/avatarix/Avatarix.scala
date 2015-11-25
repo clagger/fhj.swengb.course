@@ -69,8 +69,12 @@ class AvatarixController extends Initializable {
     //override def iterate()
     var gridRow = 0
     var gridColumn = 0
+    val height:Double = 100
+    val width:Double = 100
     for (i <- ParserFunctions.test1) {
-      grid_pane.add(new HBox(new ImageView(new Image(i._2(3)))),gridColumn,gridRow)
+      val box1:HBox = new HBox(new ImageView(new Image(i._2(3)))
+      box1.setMaxSize(width, height)
+      grid_pane.add(),gridColumn,gridRow)
       gridColumn = gridColumn + 1
       if (gridColumn >= 3){
         gridRow = gridRow + 1
