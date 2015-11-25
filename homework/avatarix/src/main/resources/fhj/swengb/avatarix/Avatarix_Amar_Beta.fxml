@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="border_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fhj.swengb.avatarix.AvatarixController">
+    <top>
+        <Label prefHeight="31.0" prefWidth="106.0" text="Avatarix" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="29.0" />
+            </font>
+        </Label>
+    </top>
+    <center>
+
+    </center>
+   <center>
+      <SplitPane dividerPositions="0.9949832775919732" prefHeight="394.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane fx:id="main_pane" prefHeight="355.0" prefWidth="477.0" />
+          <AnchorPane fx:id="splitted_pane" />
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
