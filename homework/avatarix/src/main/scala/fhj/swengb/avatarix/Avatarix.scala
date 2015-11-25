@@ -113,13 +113,31 @@ class AvatarixController extends Initializable {
 
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
+
+    val test1 = Map("fgraf" -> List("Felix", "Graf", "Graf-Carello", """https://avatars.githubusercontent.com/u/15038288?v=3"""),
+      "ekarimova" -> List("Elza", "Karimova", "elsakarimova", """https://avatars.githubusercontent.com/u/15157578?v=3"""),
+      "pkoerner" -> List("Paul", "Körner", "McKorleone", """https://avatars.githubusercontent.com/u/14877839?v=3"""),
+      "thasenbichler" -> List("Timo", "Hasenbichler", "timoooo", """https://avatars.githubusercontent.com/u/15030831?v=3"""),
+      "mfuchs" -> List("Michael", "Fuchs", "deKilla", """https://avatars.githubusercontent.com/u/4746687?v=3"""),
+      "aschneider" -> List("Andreas", "Schneider", "Zerberuss", """https://avatars.githubusercontent.com/u/15108282?v=3"""),
+      "jblazevic" -> List("Josip", "Blazevic", "jbtastic", """https://avatars.githubusercontent.com/u/15108227?v=3"""),
+      "alichtenegger" -> List("Alexander", "Lichtenegger", "AlexanderLichtenegger", """https://avatars.githubusercontent.com/u/15108218?v=3"""),
+      "cfuerbahs" -> List("Christoph", "Fürbahs", "furchr", """https://avatars.githubusercontent.com/u/12102333?v=3"""),
+      "cherzog" -> List("Carina", "Herzog", "carinaher", """https://avatars.githubusercontent.com/u/15108186?v=3"""))
+
+
+
+    test1.foreach(kv =>  grid_pane.getChildren().add(new HBox(new ImageView(new Image(kv._2(3))))))
+
+
     val url: String = "https://avatars0.githubusercontent.com/u/119250?v=3&s=400"
     val url2: String = "https://avatars3.githubusercontent.com/u/15001225?v=3&s=460"
     grid_pane.setHgap(10);
     grid_pane.setVgap(10);
-    grid_pane.getChildren().add(new HBox(new ImageView(new Image(url))))
+    /*grid_pane.getChildren().add(new HBox(new ImageView(new Image(url))))
     grid_pane.getChildren().add(new HBox(new ImageView(new Image(url2))))
 
+  */
   }
 
 }
