@@ -1,5 +1,7 @@
 package fhj.swengb.avatarix
 
+import java.awt.event.MouseEvent
+import java.beans.EventHandler
 import java.net.URL
 import java.util.ResourceBundle
 import javafx.application.Application
@@ -53,46 +55,30 @@ class Avatarix extends javafx.application.Application {
 
 class AvatarixController extends Initializable {
   @FXML var border_pane: BorderPane = _
-  @FXML var main_pane : AnchorPane = _
-  @FXML var grid_pane : GridPane = _
+  @FXML var main_pane: AnchorPane = _
+  @FXML var grid_pane: GridPane = _
 
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
-    //val url: String = "https://avatars0.githubusercontent.com/u/119250?v=3&s=400"
-    //val url2: String = "https://avatars3.githubusercontent.com/u/15001225?v=3&s=460"
-    grid_pane.setHgap(10);
-    grid_pane.setVgap(10);
-    //grid_pane.getChildren().add(new HBox((new ImageView(new Image(url)))))
 
-
-
-    //override def iterate()
     var gridRow = 0
     var gridColumn = 0
-    for (i <- ParserFunctions.test1) {
-      val iv:ImageView = new ImageView()
-      iv.setImage(new Image(i._2(3)))
-      iv.setFitHeight(120)
-      iv.setFitWidth(120)
 
-      grid_pane.add(iv, gridColumn, gridRow)
-      gridColumn += 1
+    for (i <- ParserFunctions.test1) {
+      val image: ImageView = new ImageView()
+      image.setImage(new Image(i._2(3)))
+      image.setFitHeight(120)
+      image.setFitWidth(120)
+      grid_pane.add(image, gridColumn, gridRow)
+
       if (gridColumn >= 3) {
         gridRow += 1
         gridColumn = 0
       }
+      else gridColumn += 1
     }
 
   }
-
-
-
-
-
-
-
-
-
 
 
 
