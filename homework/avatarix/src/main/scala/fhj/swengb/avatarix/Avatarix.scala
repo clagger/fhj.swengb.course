@@ -23,6 +23,33 @@ import scala.util.control.NonFatal
 object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
+<<<<<<< HEAD
+=======
+
+
+    /*
+    Zugriff auf Parser
+
+      ** List[Student]erzeugen - wird für beide Funktionen als Übergabeparameter benötigt
+      *  .studentsX liefert List[Student] der jeweiligen Gruppe
+
+      ParserFunctions.students
+      ParserFunctions.students1
+      ParserFunctions.students2
+      ParserFunctions.students3
+
+      ** getData -> Parsed erste Infos
+      * Übergabeparameter List[Students]
+
+      ParserFunctions.getData(students)
+
+      ** getStudentData -> parsed zusätzliche Infos
+      * Übergabeparameter List[Students] und x[String] = githubusername
+
+      ParserFunctions.getStudentData(students,x)
+
+    */
+>>>>>>> 2fe52642aabe055d551b2708563c6f01880c9af5
   }
 }
 
