@@ -17,13 +17,30 @@ import scala.collection.mutable.Map
 
 object Avatarix {
   def main(args: Array[String]) {
-    //Application.launch(classOf[Avatarix], args: _*)
+    Application.launch(classOf[Avatarix], args: _*)
 
     /*
-    wie man zugreifen kann:
+    Zugriff auf Parser
 
-  ParserFunctions.getStudentData()
-  */
+      ** List[Student]erzeugen - wird für beide Funktionen als Übergabeparameter benötigt
+      *  .studentsX liefert List[Student] der jeweiligen Gruppe
+
+      ParserFunctions.students
+      ParserFunctions.students1
+      ParserFunctions.students2
+      ParserFunctions.students3
+
+      ** getData -> Parsed erste Infos
+      * Übergabeparameter List[Students]
+
+      ParserFunctions.getData(students)
+
+      ** getStudentData -> parsed zusätzliche Infos
+      * Übergabeparameter List[Students] und x[String] = githubusername
+
+      ParserFunctions.getStudentData(students,x)
+
+    */
   }
 }
 
