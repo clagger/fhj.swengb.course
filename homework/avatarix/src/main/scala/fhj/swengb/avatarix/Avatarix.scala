@@ -84,6 +84,7 @@ class AvatarixController extends Initializable {
   @FXML var nachname : Text = _
   @FXML var follower : Text = _
   @FXML var following : Text = _
+  @FXML var small_image_view: ImageView = _
 
   val dropShadow = new DropShadow()
 
@@ -118,8 +119,9 @@ class AvatarixController extends Initializable {
               vorname.setText(student._2(0))
               nachname.setText(student._2(1))
               githublink.setText(student._2(4))
-              //follower.setText(student._2(6))
-              //following.setText(student._2(5))
+              follower.setText(student._2(7))
+              following.setText(student._2(5))
+              small_image_view.setImage(new Image(student._2(3)))
             }
           }
         }

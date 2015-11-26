@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -37,36 +38,37 @@
                </children></AnchorPane>
           <AnchorPane id="gray" fx:id="splitted_pane">
                <children>
-                  <Text layoutX="7.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GitHubUser:">
+                  <Text layoutX="51.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GitHubUser:">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Text>
-                  <Text id="gitHubUser" fx:id="gitHubUser" layoutX="89.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="107.13671875" />
-                  <Text id="vorname" fx:id="vorname" layoutX="80.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="105.13671875" />
-                  <Text layoutX="9.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname:">
+                  <Text id="gitHubUser" fx:id="gitHubUser" layoutX="11.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.13671875" />
+                  <Text id="vorname" fx:id="vorname" layoutX="14.0" layoutY="294.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="140.13671875" />
+                  <Text layoutX="55.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname:">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Text>
-                  <Text layoutX="8.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname:" wrappingWidth="71.48583984375">
+                  <Text layoutX="53.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname:" wrappingWidth="71.48583984375">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Text>
-                  <Text layoutX="8.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GitHubLink:">
+                  <Text layoutX="49.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GitHubLink:">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Text>
-                  <Text layoutX="10.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Follower:">
+                  <Text layoutX="58.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Follower:">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Text>
-                  <Text layoutX="10.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Following:">
+                  <Text layoutX="54.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Following:">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font></Text>
-                  <Text id="nachname" fx:id="nachname" layoutX="86.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="94.0" />
-                  <Text id="githublink" fx:id="githublink" layoutX="86.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="113.0" />
-                  <Text id="follower" fx:id="follower" layoutX="76.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="114.0" />
-                  <Text id="following" fx:id="following" layoutX="85.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="96.0" />
+                  <Text id="nachname" fx:id="nachname" layoutX="18.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="144.0" />
+                  <Text id="githublink" fx:id="githublink" layoutX="6.0" layoutY="346.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="168.0" />
+                  <Text id="follower" fx:id="follower" layoutX="27.0" layoutY="405.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="114.0" />
+                  <Text id="following" fx:id="following" layoutX="38.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="96.0" />
+                  <ImageView fx:id="small_image_view" fitHeight="100.0" fitWidth="100.0" layoutX="35.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
                </children></AnchorPane>
         </items>
       </SplitPane>
