@@ -18,11 +18,13 @@ import javafx.stage.Stage
 
 import fhj.swengb.{Students, Speakers}
 
+import scala.collection.mutable.Map
 import scala.util.control.NonFatal
 
 object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
+
     /*
     Zugriff auf Parser
 
@@ -45,6 +47,7 @@ object Avatarix {
       ParserFunctions.getStudentData(students,x)
 
     */
+
   }
 }
 
@@ -81,6 +84,7 @@ class AvatarixController extends Initializable {
   @FXML var nachname : Text = _
   @FXML var follower : Text = _
   @FXML var following : Text = _
+  @FXML var small_image_view: ImageView = _
 
   val dropShadow = new DropShadow()
 
@@ -106,26 +110,36 @@ class AvatarixController extends Initializable {
 
     override def handle(event: MouseEvent): Unit = {
       event.getSource match {
-        case a: ImageView => {
-          val studentList = Students.studentGroup1.toList
-          val data = ParserFunctions.getData(ParserFunctions.students2)
+        case onClick: ImageView => {
 
-          gitHubUser.setText(a.getId())
-          //vorname.setText(data(0))
-          //nachname.setText(data(0))
-          //follower.setText(data(0))
-          //following.setText(data(0))
+            gitHubUser.setText(onClick.getId())
+
+          for (student <- loadData) {
+            if (student._1 == onClick.getId()) {
+              vorname.setText(student._2(0))
+              nachname.setText(student._2(1))
+              githublink.setText(student._2(4))
+              follower.setText(student._2(7))
+              following.setText(student._2(5))
+              small_image_view.setImage(new Image(student._2(3)))
+            }
+          }
         }
+
         case _ => assert(false)
       }
     }
   }
 
+    // load the data (map) of the group into a variable to increase performance and to not parse every time
+    // change here the ending ".students<groupNumber>" to get another group loaded
+  var loadData: Map[String,List[String]] = ParserFunctions.getData(ParserFunctions.students2)
+
 
   def pictureLoader(): Unit = {
       var gridRow = 0
       var gridColumn = 0
-      for (i <- ParserFunctions.test1) {
+      for (i <- loadData) {
         val iv: ImageView = new ImageView()
         iv.setImage(new Image(i._2(3)))
         //sets the size of every ImageView
@@ -141,8 +155,9 @@ class AvatarixController extends Initializable {
         else gridColumn += 1
 
         //sets the Id for every picture to the GitHubUserName
-        iv.setId(i._2(2))
-        //iv.setUserData(i._2)
+        iv.setId(i._1)
+        //caches the images to improve the performance
+        iv.setCache(true)
 
         //for every image --> call the mouseEventHandler
         iv.setOnMouseClicked(mouseEventHandler)
