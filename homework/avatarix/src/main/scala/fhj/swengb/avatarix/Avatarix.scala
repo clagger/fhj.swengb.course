@@ -23,10 +23,6 @@ import scala.util.control.NonFatal
 object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
-<<<<<<< HEAD
-=======
-
-
     /*
     Zugriff auf Parser
 
@@ -49,7 +45,6 @@ object Avatarix {
       ParserFunctions.getStudentData(students,x)
 
     */
->>>>>>> 2fe52642aabe055d551b2708563c6f01880c9af5
   }
 }
 
@@ -113,7 +108,7 @@ class AvatarixController extends Initializable {
       event.getSource match {
         case a: ImageView => {
           val studentList = Students.studentGroup1.toList
-          val data:List[String] = ParserFunctions.getStudentData(studentList, a.getId)
+          val data = ParserFunctions.getData(ParserFunctions.students2)
 
           gitHubUser.setText(a.getId())
           //vorname.setText(data(0))
