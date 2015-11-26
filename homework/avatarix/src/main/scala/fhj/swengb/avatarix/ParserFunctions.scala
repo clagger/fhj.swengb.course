@@ -12,6 +12,8 @@ object ParserFunctions {
   /**
     * List[Students]
     */
+
+    //students will fail due to our programme can only display up to 12 users per load because the grid pane is set to 4x3
   val students = Students.mkStudents().toList
   val students1 = Students.studentGroup1.toList
   val students2 = Students.studentGroup2.toList
@@ -39,35 +41,7 @@ object ParserFunctions {
     }
     data
   }
-<<<<<<< HEAD
 
-  /*val valuetest = "deKilla"
-  val studenlist = Students.studentGroup1.toList
-  val students1 = getData(Students.studentGroup1.toList)
-
-  println(getStudentData(studenlist,valuetest))
-  */
-=======
-
-  /**
-    * gibt Detaildaten von ausgewählten Students in einer Liste zurück
-    * für Detailansicht
-    *
-
-  def getStudentData(students:List[Student],x:String):MutableList[String] = {
-    val res:MutableList[String] = MutableList()
-    for(value <- students if(value.githubUsername == x)) {
-      res += (value.gitHubUser.html.toString,
-      value.gitHubUser.fing.toString,
-      value.gitHubUser.fing_url.toString,
-      value.gitHubUser.foll.toString,
-      value.gitHubUser.foll_url.toString,
-      value.gitHubUser.create.toString)
-    }
-    res
-  }
-    */
->>>>>>> 2fe52642aabe055d551b2708563c6f01880c9af5
 
   /***
     * TEST MAPS für getData()
