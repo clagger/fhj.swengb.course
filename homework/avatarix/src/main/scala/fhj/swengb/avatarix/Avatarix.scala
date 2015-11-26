@@ -19,6 +19,7 @@ object Avatarix {
   def main(args: Array[String]) {
     Application.launch(classOf[Avatarix], args: _*)
 
+
     /*
     Zugriff auf Parser
 

@@ -26,11 +26,16 @@ object ParserFunctions {
   def getData(students:List[Student]):Map[String,List[String]] = {
     val data = Map[String,List[String]]()
     for(value <- students) {
-      data += value.userId -> List(value.firstName,
+      data += value.githubUsername -> List(value.firstName,
         value.secondName,
-        value.githubUsername,
-        value.gitHubUser.avatarUrl.toString
-      )
+        value.userId,
+        value.gitHubUser.avatarUrl.toString,
+        value.gitHubUser.html.toString,
+        value.gitHubUser.fing.toString,
+        value.gitHubUser.fing_url.toString,
+        value.gitHubUser.foll.toString,
+        value.gitHubUser.foll_url.toString,
+        value.gitHubUser.create.toString)
     }
     data
   }
@@ -39,7 +44,7 @@ object ParserFunctions {
     * gibt Detaildaten von ausgewählten Students in einer Liste zurück
     * für Detailansicht
     *
-   */
+
   def getStudentData(students:List[Student],x:String):MutableList[String] = {
     val res:MutableList[String] = MutableList()
     for(value <- students if(value.githubUsername == x)) {
@@ -52,6 +57,7 @@ object ParserFunctions {
     }
     res
   }
+    */
 
   /***
     * TEST MAPS für getData()
