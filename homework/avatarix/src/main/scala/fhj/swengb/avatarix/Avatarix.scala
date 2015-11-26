@@ -85,15 +85,14 @@ class AvatarixController extends Initializable {
     override def handle(event: MouseEvent): Unit = {
       event.getSource match {
         case a: ImageView => {
-          val studentList = Students.studentGroup1.toList
-          val data:List[String] = ParserFunctions.getStudentData(studentList, a.getId)
 
-          gitHubUser.setText(a.getId())
-          //vorname.setText(data(0))
-          //nachname.setText(data(0))
-          //follower.setText(data(0))
-          //following.setText(data(0))
-        }
+            gitHubUser.setText(a.getId())
+            vorname.setText(a.getUserData.toString.split(",")(0))
+            nachname.setText(a.getUserData.toString.split(",")(1))
+            //follower.setText(data(0))
+            //following.setText(data(0))
+          }
+
         case _ => assert(false)
       }
     }
@@ -120,7 +119,9 @@ class AvatarixController extends Initializable {
 
         //sets the Id for every picture to the GitHubUserName
         iv.setId(i._2(2))
-        //iv.setUserData(i._2)
+        iv.setUserData(i._2(0),i._2(1),i._2(2))
+        //caches the images to improve the performance
+        iv.setCache(true)
 
         //for every image --> call the mouseEventHandler
         iv.setOnMouseClicked(mouseEventHandler)
