@@ -1,6 +1,5 @@
 package fhj.swengb.avatarix
 
-
 import javafx.geometry.Insets
 import javafx.scene.effect.DropShadow
 import javafx.scene.input.MouseEvent
@@ -15,8 +14,9 @@ import javafx.scene.shape.Line
 import javafx.scene.text.Text
 import javafx.scene.{Parent, Scene}
 import javafx.stage.Stage
+import scala.xml
 
-import fhj.swengb.{Students, Speakers}
+import fhj.swengb.{Students, Student}
 
 import scala.util.control.NonFatal
 
@@ -49,7 +49,6 @@ object Avatarix {
 }
 
 class Avatarix extends javafx.application.Application {
-
 
   val Fxml = "/fhj/swengb/avatarix/Gruppe2AvatarixGUI.fxml"
   val Css = "fhj/swengb/avatarix/Gruppe2Avatarix.css"
