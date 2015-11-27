@@ -2,6 +2,7 @@ package fhj.swengb.avatarix
 
 import fhj.swengb.{Students, Student}
 
+import scala.xml
 import scala.collection.mutable.Map
 import scala.collection.mutable.MutableList
 
