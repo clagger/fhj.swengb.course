@@ -24,6 +24,18 @@ object SwengbUtil {
   def fetch(url: URL): String = {
     Source.fromURL(url).mkString
   }
+
+  /**
+    * function to measure execution time of first function, optionally executing a display function,
+    * returning the time in milliseconds
+    */
+  def time[A](a: => A, display: Long => Unit = s => ()): A = {
+    val now = System.nanoTime
+    val result = a
+    val micros = (System.nanoTime - now) / 1000000
+    display(micros)
+    result
+  }
 }
 
 
