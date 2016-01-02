@@ -1,9 +1,10 @@
 package fhj.swengb
 
-import java.io.File
+import java.io.{IOException, File}
 import java.net.URL
 import java.nio.charset.StandardCharsets
-import java.nio.file.{Paths, Files}
+import java.nio.file.attribute.BasicFileAttributes
+import java.nio.file._
 
 import scala.io.Source
 
@@ -35,6 +36,30 @@ object SwengbUtil {
     val micros = (System.nanoTime - now) / 1000000
     display(micros)
     result
+  }
+
+  def removeRecursive(path: Path): Unit = {
+    Files.walkFileTree(path, new SimpleFileVisitor[Path]() {
+      override def visitFile(path: Path, attrs: BasicFileAttributes): FileVisitResult = {
+        Files.delete(path)
+        FileVisitResult.CONTINUE
+      }
+
+      override def visitFileFailed(path: Path, exc: IOException): FileVisitResult = {
+        Files.delete(path)
+        FileVisitResult.CONTINUE;
+      }
+
+      override def postVisitDirectory(dir: Path, exc: IOException): FileVisitResult = {
+        if (exc == null) {
+          Files.delete(dir)
+          FileVisitResult.CONTINUE
+        } else {
+          throw exc
+        }
+      }
+    }
+    )
   }
 }
 
