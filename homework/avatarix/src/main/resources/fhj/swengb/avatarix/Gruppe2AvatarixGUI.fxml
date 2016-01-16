@@ -18,7 +18,7 @@
 
     </center>
    <center>
-      <SplitPane dividerPositions="0.7212276214833759" prefHeight="394.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <SplitPane fx:id="split" dividerPositions="0.7212276214833759" prefHeight="394.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <items>
           <AnchorPane id="windows7" fx:id="main_pane" prefHeight="355.0" prefWidth="477.0">
                <children>

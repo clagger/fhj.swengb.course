@@ -10,6 +10,7 @@ import javafx.application.Application
 import javafx.fxml.{FXML, FXMLLoader, Initializable}
 import javafx.scene.image.{Image, ImageView}
 import javafx.scene.layout.{AnchorPane, GridPane, HBox, BorderPane}
+import javafx.scene.control.SplitPane
 import javafx.scene.shape.Line
 import javafx.scene.text.Text
 import javafx.scene.{Parent, Scene}
@@ -84,12 +85,15 @@ class AvatarixController extends Initializable {
   @FXML var follower : Text = _
   @FXML var following : Text = _
   @FXML var small_image_view: ImageView = _
+  @FXML var split: SplitPane = _
+
 
   val dropShadow = new DropShadow()
 
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
     grid_pane.setPadding(new Insets(-25,-20,-25,-20))
+    split.set
     pictureLoader()
   }
 
