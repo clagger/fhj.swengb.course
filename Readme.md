@@ -2,7 +2,6 @@
 
 - [Slides](material/presentations/lecture06.pdf)
 
-
 # Lab 05, 27,11
 
 - [Slides](material/presentations/lab05.pdf)
